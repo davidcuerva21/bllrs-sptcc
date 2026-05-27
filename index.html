@@ -255,17 +255,131 @@ a { color: inherit; text-decoration: none; }
 .footer-inner { display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dim); }
 .footer-inner img { height: 18px; opacity: 0.6; filter: brightness(0) invert(1); }
 
+/* TABLET — 980px down */
 @media (max-width: 980px) {
   .hero-grid, .feature-row, .venue-grid, .kit-feature-row { grid-template-columns: 1fr; gap: 40px; }
   .feature-row.reverse .feature-image, .feature-row.reverse .feature-text { order: initial; }
-  .hero h1 { font-size: 64px; }
-  .hero h1 .smaller { font-size: 36px; }
-  .section h2 { font-size: 44px; }
-  .event-quote { font-size: 30px; }
+  .hero h1 { font-size: 72px; }
+  .hero h1 .smaller { font-size: 40px; }
+  .section h2 { font-size: 48px; }
+  .event-quote { font-size: 32px; }
   .numbers-grid, .brings-grid, .groups-grid, .schedule-grid, .finals-grid, .format-summary, .rules-grid, .location-strip, .event-meta-grid { grid-template-columns: 1fr 1fr; }
   .kits-row { grid-template-columns: repeat(5, 1fr); gap: 8px; }
-  .venue-photos { min-height: 400px; }
+  .venue-photos { grid-template-columns: 1fr 1fr; min-height: 480px; }
+  .venue-photos .tall { grid-column: 1 / -1; grid-row: auto; min-height: 220px; }
   .nav-links { display: none; }
+  .hero { padding: 80px 0 70px; }
+  .section { padding: 80px 0; }
+}
+
+/* MOBILE — 576px down */
+@media (max-width: 576px) {
+  .container { padding: 0 20px; }
+  .section { padding: 60px 0; border-bottom-width: 1px; }
+  .section-header { margin-bottom: 36px; }
+  .nav { padding: 16px 0; }
+  .nav-cta { padding: 7px 12px; font-size: 10px; letter-spacing: 0.14em; }
+  .nav-logo .sub { display: none; }
+
+  .hero { padding: 50px 0 60px; }
+  .hero-grid { gap: 30px; }
+  .hero-tag { font-size: 10px; letter-spacing: 0.18em; padding: 6px 11px; margin-bottom: 22px; }
+  .hero h1 { font-size: 56px; line-height: 0.92; margin-bottom: 20px; }
+  .hero h1 .smaller { font-size: 32px; }
+  .hero-sub { font-size: 15px; margin-bottom: 28px; }
+  .hero-stats { gap: 18px; padding-top: 22px; flex-wrap: wrap; }
+  .hero-stats .stat { flex: 1 0 40%; }
+  .stat .num { font-size: 30px; }
+  .stat .label { font-size: 9px; letter-spacing: 0.16em; margin-top: 5px; }
+  .hero-image { aspect-ratio: 4/5; }
+  .hero-image-logos { left: 14px; right: 14px; bottom: 14px; gap: 6px; }
+  .hero-image-logos img { height: 12px; }
+  .hero-image-logos img.tall { height: 16px; }
+  .hero-image-logos img.volt-mark { height: 18px; }
+  .hero-image::after { font-size: 11px; padding: 3px 8px; top: 14px; right: 14px; letter-spacing: 0.2em; }
+
+  .section h2 { font-size: 36px; line-height: 1.05; }
+  .section .lede { font-size: 15px; }
+  .section-num { font-size: 11px; letter-spacing: 0.22em; margin-bottom: 12px; }
+
+  .event-quote { font-size: 22px; line-height: 1.18; }
+  .event-meta-grid { grid-template-columns: 1fr; margin-top: 36px; }
+  .event-meta-cell { padding: 20px 22px; }
+  .event-meta-cell .val { font-size: 19px; }
+
+  .numbers-grid { grid-template-columns: 1fr 1fr; }
+  .numbers-cell { padding: 32px 18px; }
+  .numbers-cell .big { font-size: 56px; }
+  .numbers-cell .lbl { font-size: 10px; letter-spacing: 0.16em; margin-top: 10px; }
+
+  .venue-photos { grid-template-columns: 1fr; min-height: 0; gap: 6px; }
+  .venue-photos .tall { grid-column: auto; grid-row: auto; aspect-ratio: 4/5; min-height: 0; }
+  .venue-photos .pic { aspect-ratio: 4/3; min-height: 0; }
+  .venue-text { padding-right: 0; }
+  .venue-text p { font-size: 15px; }
+  .location-strip { grid-template-columns: 1fr; margin-top: 32px; }
+  .location-strip .cell { padding: 20px 22px; }
+
+  .format-phase-header { gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+  .format-phase-header h3 { font-size: 28px; line-height: 1.05; }
+  .format-phase-header .tag { font-size: 11px; }
+
+  .groups-grid { grid-template-columns: 1fr; }
+  .group-card { padding: 22px 22px 18px; }
+  .group-card .group-name { font-size: 30px; margin-bottom: 14px; }
+  .group-card .team { padding: 8px 12px; font-size: 13px; }
+
+  .schedule-title { font-size: 16px; letter-spacing: 0.14em; margin-bottom: 16px; }
+  .schedule-grid { grid-template-columns: 1fr; }
+  .matchday { padding: 20px 22px; }
+  .matchday .md-label { font-size: 11px; letter-spacing: 0.18em; margin-bottom: 10px; }
+  .matchday .match { font-size: 15px; }
+
+  .rules-grid { grid-template-columns: 1fr; }
+  .rule-card { padding: 22px 22px; }
+  .points-list { gap: 10px; }
+  .points-list .p { padding: 10px 12px; }
+  .points-list .p .val { font-size: 22px; }
+  .points-list .p .lab { font-size: 10px; letter-spacing: 0.16em; }
+
+  .finals-grid { grid-template-columns: 1fr 1fr; }
+  .final-card { padding: 20px 14px; }
+  .final-card .ord { font-size: 28px; }
+  .final-card .pair { font-size: 13px; }
+  .final-card .prize { font-size: 11px; padding: 5px 6px; letter-spacing: 0.12em; }
+
+  .format-summary { grid-template-columns: 1fr 1fr; }
+  .format-summary .cell { padding: 20px 18px; }
+  .format-summary .cell:last-child { grid-column: 1 / -1; }
+  .format-summary .cell .big { font-size: 44px; }
+
+  .kits-row { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .kits-strip { font-size: 9px; letter-spacing: 0.14em; flex-wrap: wrap; gap: 6px; justify-content: center; }
+  .kit-feature-row .feature-text h3 { font-size: 32px; }
+  .kit-feature-row .feature-text p { font-size: 14px; }
+
+  .feature-row h3 { font-size: 32px; }
+  .feature-row p { font-size: 14px; }
+  .laliga-image { aspect-ratio: 3/4; max-height: none; }
+  .laliga-row { gap: 30px; }
+
+  .brings-grid { grid-template-columns: 1fr; }
+  .brings-cell { padding: 26px 22px; }
+  .brings-cell .title { font-size: 19px; }
+
+  .partners { padding: 50px 0; }
+  .partners-grid { gap: 28px; justify-content: center; }
+  .partner-logo { flex: 1 0 calc(50% - 28px); align-items: center; }
+  .partner-logo img { max-height: 30px; }
+  .partner-logo.partner-volt img { max-height: 44px; }
+  .partner-logo .tag { font-size: 9px; letter-spacing: 0.16em; text-align: center; }
+
+  .cta-block h2 { font-size: 48px; }
+  .cta-buttons { gap: 10px; }
+  .cta-btn { padding: 14px 22px; font-size: 14px; letter-spacing: 0.14em; width: 100%; text-align: center; }
+
+  .footer { padding: 36px 0 28px; }
+  .footer-inner { flex-direction: column; gap: 12px; text-align: center; font-size: 10px; letter-spacing: 0.14em; }
 }
 </style>
 </head>
