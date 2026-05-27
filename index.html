@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPTCC Football Tournament — BALLERS Bangkok</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0A0A0A;
+  --bg-soft: #131313;
+  --bg-card: #181818;
+  --line: #232323;
+  --line-soft: #1C1C1C;
+  --text: #FFFFFF;
+  --muted: #8A8A8A;
+  --dim: #4A4A4A;
+  --accent: #22C55E;
+  --accent-soft: rgba(34,197,94,0.12);
+  --accent-line: rgba(34,197,94,0.40);
+  --villarreal: #FFD400;
+  --barca-a: #004D98;
+  --barca-b: #A50044;
+  --madrid: #FFFFFF;
+  --atleti-a: #CB3524;
+  --atleti-b: #FFFFFF;
+  --betis-a: #008B45;
+  --betis-b: #FFFFFF;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  font-weight: 400;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+.container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+h1, h2, h3, h4 { font-family: 'Bebas Neue', 'Inter', sans-serif; font-weight: 700; letter-spacing: 0.02em; }
+.section { padding: 110px 0; border-bottom: 1px solid var(--line-soft); position: relative; }
+.section:last-child { border-bottom: none; }
+a { color: inherit; text-decoration: none; }
+
+/* NAV */
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(10,10,10,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line-soft); padding: 22px 0; }
+.nav-inner { display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { display: flex; align-items: center; gap: 14px; }
+.nav-logo img { height: 22px; width: auto; }
+.nav-logo .divider { width: 1px; height: 20px; background: var(--line); }
+.nav-logo .sub { font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 0.25em; color: var(--muted); }
+.nav-links { display: flex; gap: 36px; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; }
+.nav-links a { color: var(--muted); transition: color 0.2s; }
+.nav-links a:hover { color: var(--text); }
+.nav-cta { padding: 9px 18px; border: 1px solid var(--accent-line); color: var(--accent); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; transition: all 0.25s; }
+.nav-cta:hover { background: var(--accent); color: var(--text); border-color: var(--accent); }
+
+/* HERO */
+.hero { padding: 130px 0 110px 0; position: relative; overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 80px; align-items: center; }
+.hero-tag { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px; border: 1px solid var(--accent-line); background: var(--accent-soft); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 36px; font-weight: 600; }
+.hero-tag::before { content: '●'; font-size: 8px; }
+.hero h1 { font-size: 102px; line-height: 0.9; margin-bottom: 26px; letter-spacing: -0.02em; font-weight: 800; }
+.hero h1 .smaller { font-size: 56px; display: block; }
+.hero-sub { font-size: 19px; color: var(--muted); line-height: 1.45; max-width: 520px; font-weight: 300; margin-bottom: 44px; }
+.hero-stats { display: flex; gap: 42px; padding-top: 32px; border-top: 1px solid var(--line); }
+.stat .num { font-family: 'Bebas Neue', sans-serif; font-size: 44px; line-height: 1; }
+.stat .num .ic { color: var(--accent); font-size: 18px; vertical-align: middle; margin-right: 2px; }
+.stat .label { font-size: 10px; color: var(--muted); letter-spacing: 0.2em; text-transform: uppercase; margin-top: 8px; }
+.hero-image { aspect-ratio: 4/5; background-image: url('assets/hero-jersey.jpg'); background-size: cover; background-position: center; border: 1px solid var(--line); position: relative; filter: grayscale(0%) contrast(1.05); }
+.hero-image::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(10,10,10,0.85) 100%); }
+.hero-image::after { content: '27 · 06 · 26'; position: absolute; top: 22px; right: 24px; font-family: 'Bebas Neue', sans-serif; font-size: 15px; letter-spacing: 0.30em; color: var(--text); opacity: 0.85; padding: 4px 10px; border: 1px solid rgba(255,255,255,0.35); }
+.hero-image-logos { position: absolute; left: 24px; right: 24px; bottom: 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; z-index: 2; }
+.hero-image-logos .lg { display: flex; align-items: center; gap: 6px; font-family: 'Bebas Neue', sans-serif; font-size: 10px; letter-spacing: 0.22em; color: rgba(255,255,255,0.85); }
+.hero-image-logos img { height: 16px; width: auto; filter: brightness(0) invert(1); opacity: 0.92; }
+.hero-image-logos img.tall { height: 24px; }
+
+/* SECTION HEADER */
+.section-header { margin-bottom: 64px; max-width: 900px; }
+.section-num { font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 0.30em; color: var(--accent); margin-bottom: 16px; }
+.section h2 { font-size: 64px; line-height: 1.0; letter-spacing: -0.01em; margin-bottom: 22px; }
+.section .lede { font-size: 19px; color: var(--muted); line-height: 1.55; font-weight: 300; max-width: 720px; }
+
+/* THE EVENT — quote-style */
+.event-quote { font-family: 'Bebas Neue', sans-serif; font-size: 44px; line-height: 1.1; max-width: 1000px; letter-spacing: 0.005em; }
+.event-quote .green { color: var(--accent); }
+.event-meta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 64px; background: var(--line-soft); border: 1px solid var(--line-soft); }
+.event-meta-cell { background: var(--bg); padding: 28px 26px; }
+.event-meta-cell .lbl { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.event-meta-cell .val { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.02em; }
+
+/* NUMBERS */
+.numbers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); }
+.numbers-cell { background: var(--bg); padding: 56px 32px; text-align: center; }
+.numbers-cell .big { font-family: 'Bebas Neue', sans-serif; font-size: 88px; line-height: 0.95; color: var(--text); }
+.numbers-cell .big .ic { color: var(--accent); }
+.numbers-cell .lbl { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-top: 14px; }
+
+/* VENUE */
+.venue-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 36px; align-items: stretch; }
+.venue-text { display: flex; flex-direction: column; justify-content: center; padding-right: 24px; }
+.venue-text p { color: var(--muted); font-size: 17px; line-height: 1.65; margin-bottom: 18px; font-weight: 300; }
+.venue-text p strong { color: var(--text); font-weight: 500; }
+.venue-photos { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; min-height: 540px; }
+.venue-photos .pic { background-size: cover; background-position: center; border: 1px solid var(--line); filter: grayscale(10%) contrast(1.05); }
+.venue-photos .tall { grid-row: span 2; }
+
+.location-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 52px; background: var(--line-soft); border: 1px solid var(--line-soft); }
+.location-strip .cell { background: var(--bg); padding: 26px 28px; }
+.location-strip .cell .lbl { font-family: 'Bebas Neue', sans-serif; font-size: 11px; letter-spacing: 0.30em; color: var(--accent); margin-bottom: 10px; }
+.location-strip .cell .val { font-size: 17px; line-height: 1.5; font-weight: 400; }
+.location-strip .cell .val .muted { color: var(--muted); font-size: 13px; display: block; margin-top: 4px; }
+
+/* FORMAT — full SPTCC redesign */
+.format-phase-header { display: flex; align-items: baseline; gap: 14px; margin-bottom: 28px; }
+.format-phase-header .tag { font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 0.30em; color: var(--accent); }
+.format-phase-header h3 { font-size: 42px; line-height: 1.0; letter-spacing: -0.01em; }
+
+.groups-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); margin-bottom: 56px; }
+.group-card { background: var(--bg); padding: 32px 32px 24px; }
+.group-card .group-label { font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 0.30em; color: var(--muted); margin-bottom: 6px; }
+.group-card .group-name { font-family: 'Bebas Neue', sans-serif; font-size: 36px; letter-spacing: 0.04em; margin-bottom: 18px; }
+.group-card.group-a .group-name { color: var(--accent); }
+.group-card.group-b .group-name { color: #6694FF; }
+.group-card .teams { display: flex; flex-direction: column; gap: 8px; }
+.group-card .team { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border: 1px solid var(--line); font-size: 14px; letter-spacing: 0.08em; }
+.group-card .team .badge { font-family: 'Bebas Neue', sans-serif; font-size: 13px; color: var(--accent); width: 28px; }
+.group-card.group-b .team .badge { color: #6694FF; }
+
+.schedule-block { margin-bottom: 56px; }
+.schedule-title { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.20em; color: var(--muted); margin-bottom: 24px; }
+.schedule-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); }
+.matchday { background: var(--bg); padding: 26px 24px; }
+.matchday .md-label { font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 0.25em; color: var(--accent); margin-bottom: 14px; }
+.matchday .match { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px dashed var(--line); font-family: 'Bebas Neue', sans-serif; font-size: 17px; letter-spacing: 0.08em; }
+.matchday .match:last-child { border-bottom: none; }
+.matchday .match .vs { color: var(--muted); font-size: 11px; letter-spacing: 0.20em; font-family: 'Inter', sans-serif; font-weight: 500; }
+.matchday .match.a { color: var(--accent); }
+.matchday .match.b { color: #6694FF; }
+.matchday .match span.team-id { min-width: 28px; }
+
+.rules-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); margin-bottom: 56px; }
+.rule-card { background: var(--bg); padding: 30px 32px; }
+.rule-card .lbl { font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 0.30em; color: var(--accent); margin-bottom: 16px; }
+.points-list { display: flex; gap: 24px; }
+.points-list .p { flex: 1; padding: 14px 18px; border: 1px solid var(--line); }
+.points-list .p .val { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--accent); }
+.points-list .p .lab { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+.tiebreak-list { display: flex; flex-direction: column; gap: 10px; }
+.tiebreak-list li { display: flex; align-items: center; gap: 14px; font-size: 14px; color: var(--text); padding: 6px 0; }
+.tiebreak-list li .n { font-family: 'Bebas Neue', sans-serif; font-size: 15px; color: var(--accent); min-width: 24px; letter-spacing: 0.05em; }
+
+.finals-block { margin-bottom: 56px; }
+.finals-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); }
+.final-card { background: var(--bg); padding: 26px 22px; text-align: center; position: relative; }
+.final-card .ord { font-family: 'Bebas Neue', sans-serif; font-size: 36px; line-height: 1.0; color: var(--accent); letter-spacing: 0.02em; margin-bottom: 8px; }
+.final-card .pair { font-family: 'Bebas Neue', sans-serif; font-size: 15px; color: var(--text); letter-spacing: 0.08em; margin-bottom: 10px; line-height: 1.3; }
+.final-card .pair .vs { color: var(--muted); font-size: 11px; margin: 0 4px; }
+.final-card .arrow { font-size: 12px; color: var(--muted); margin: 6px 0; }
+.final-card .prize { font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 0.18em; color: var(--text); border: 1px solid var(--accent-line); background: var(--accent-soft); padding: 6px 8px; }
+.final-card.champion .prize { background: var(--accent); color: var(--text); border-color: var(--accent); }
+
+.format-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); }
+.format-summary .cell { background: var(--bg); padding: 28px 28px; text-align: center; }
+.format-summary .cell .big { font-family: 'Bebas Neue', sans-serif; font-size: 60px; line-height: 0.95; color: var(--text); }
+.format-summary .cell .big .ic { color: var(--accent); }
+.format-summary .cell .lbl { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-top: 12px; }
+
+/* KITS — CSS jersey row */
+.kits-photo-wrap { width: 100%; }
+.kits-photo { width: 100%; height: auto; display: block; border: 1px solid var(--line); background: var(--bg-soft); }
+.kits-strip { display: flex; justify-content: space-between; margin-top: 14px; padding: 12px 4px 0; border-top: 1px solid var(--line); font-family: 'Bebas Neue', sans-serif; font-size: 11px; letter-spacing: 0.22em; color: var(--muted); }
+.kits-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; margin: 18px 0 30px; }
+.jersey { aspect-ratio: 3/4; background: var(--bg-soft); border: 1px solid var(--line); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.jersey .body { position: absolute; inset: 14% 8% 8% 8%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 28%; gap: 6px; }
+.jersey .sponsor-main { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 0.05em; color: #fff; text-shadow: 0 1px 0 rgba(0,0,0,0.25); }
+.jersey .badges { position: absolute; top: 20%; left: 10%; right: 10%; display: flex; justify-content: space-between; }
+.jersey .badge-left, .jersey .badge-right { font-family: 'Bebas Neue', sans-serif; font-size: 10px; letter-spacing: 0.15em; padding: 3px 5px; border: 1px solid rgba(255,255,255,0.55); color: #fff; background: rgba(0,0,0,0.18); }
+.jersey .label { position: absolute; bottom: 14px; left: 14px; right: 14px; text-align: center; font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 0.20em; color: var(--muted); }
+.jersey .collar { position: absolute; top: 10%; left: 50%; transform: translateX(-50%); width: 24%; height: 6%; border: 1px solid rgba(255,255,255,0.5); border-top: none; border-radius: 0 0 50% 50%; }
+.jersey .sleeve-l, .jersey .sleeve-r { position: absolute; top: 12%; width: 14%; height: 30%; background: inherit; }
+.jersey .sleeve-l { left: -4%; transform: skewY(8deg); }
+.jersey .sleeve-r { right: -4%; transform: skewY(-8deg); }
+
+.jersey.villarreal { background: var(--villarreal); }
+.jersey.villarreal .sponsor-main { color: #003465; text-shadow: none; }
+.jersey.villarreal .badge-left, .jersey.villarreal .badge-right { color: #003465; border-color: rgba(0,52,101,0.55); background: rgba(255,255,255,0.20); }
+
+.jersey.barca { background: repeating-linear-gradient(90deg, var(--barca-a) 0, var(--barca-a) 20%, var(--barca-b) 20%, var(--barca-b) 40%, var(--barca-a) 40%, var(--barca-a) 60%, var(--barca-b) 60%, var(--barca-b) 80%, var(--barca-a) 80%, var(--barca-a) 100%); }
+.jersey.madrid { background: var(--madrid); }
+.jersey.madrid .sponsor-main { color: #0A0A0A; text-shadow: none; }
+.jersey.madrid .badge-left, .jersey.madrid .badge-right { color: #0A0A0A; border-color: rgba(0,0,0,0.4); background: rgba(0,0,0,0.05); }
+.jersey.madrid .collar { border-color: rgba(0,0,0,0.4); }
+
+.jersey.atleti { background: repeating-linear-gradient(90deg, var(--atleti-a) 0, var(--atleti-a) 20%, var(--atleti-b) 20%, var(--atleti-b) 40%, var(--atleti-a) 40%, var(--atleti-a) 60%, var(--atleti-b) 60%, var(--atleti-b) 80%, var(--atleti-a) 80%, var(--atleti-a) 100%); }
+.jersey.betis { background: repeating-linear-gradient(90deg, var(--betis-a) 0, var(--betis-a) 20%, var(--betis-b) 20%, var(--betis-b) 40%, var(--betis-a) 40%, var(--betis-a) 60%, var(--betis-b) 60%, var(--betis-b) 80%, var(--betis-a) 80%, var(--betis-a) 100%); }
+
+.kit-feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.kit-feature-row .feature-text h3 { font-size: 48px; line-height: 1.0; margin-bottom: 22px; }
+.kit-feature-row .feature-text p { color: var(--muted); font-size: 16.5px; line-height: 1.65; margin-bottom: 16px; font-weight: 300; }
+.kit-feature-row .feature-text p strong { color: var(--text); font-weight: 500; }
+.kit-feature-eyebrow { font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 0.30em; color: var(--accent); margin-bottom: 16px; }
+
+/* LALIGA — feature reverse */
+.feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.feature-row.reverse .feature-image { order: 2; }
+.feature-row.reverse .feature-text { order: 1; }
+.feature-eyebrow { font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 0.30em; color: var(--accent); margin-bottom: 16px; }
+.feature-row h3 { font-size: 48px; line-height: 1.0; margin-bottom: 22px; letter-spacing: -0.005em; }
+.feature-row p { color: var(--muted); font-size: 16.5px; line-height: 1.65; margin-bottom: 16px; font-weight: 300; }
+.feature-row p strong { color: var(--text); font-weight: 500; }
+.feature-image { aspect-ratio: 4/3; background-size: cover; background-position: center; border: 1px solid var(--line); filter: grayscale(15%); position: relative; }
+.laliga-image { aspect-ratio: 3/4; background-image: url('assets/laliga-activation.jpg'); background-size: cover; background-position: center 30%; filter: grayscale(0%) contrast(1.05) saturate(1.1); max-height: 620px; }
+.laliga-row { align-items: stretch; gap: 50px; }
+.laliga-row .feature-text { display: flex; flex-direction: column; justify-content: center; }
+
+/* WHAT WE BRING */
+.brings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); }
+.brings-cell { background: var(--bg); padding: 36px 32px; }
+.brings-cell .num { font-family: 'Bebas Neue', sans-serif; font-size: 13px; color: var(--accent); letter-spacing: 0.30em; margin-bottom: 10px; }
+.brings-cell .title { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.04em; margin-bottom: 8px; }
+.brings-cell .desc { font-size: 14px; color: var(--muted); line-height: 1.6; font-weight: 300; }
+
+/* PARTNERS strip */
+.partners { padding: 80px 0; background: var(--bg-soft); }
+.partners-label { text-align: center; font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 0.30em; color: var(--muted); margin-bottom: 40px; }
+.partners-grid { display: flex; justify-content: space-around; align-items: center; gap: 40px; flex-wrap: wrap; }
+.partner-logo { opacity: 0.85; transition: opacity 0.2s; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.partner-logo img { max-height: 38px; width: auto; }
+.partner-logo img.tall { max-height: 52px; }
+.partner-logo.invert img { filter: brightness(0) invert(1); }
+.partner-logo .tag { font-family: 'Bebas Neue', sans-serif; font-size: 10px; letter-spacing: 0.22em; color: var(--muted); }
+.partner-logo .text-mark { font-family: 'Bebas Neue', sans-serif; font-size: 32px; letter-spacing: 0.12em; color: var(--text); }
+.partner-logo:hover { opacity: 1; }
+
+/* CONTACT / CTA */
+.cta-block { text-align: center; padding: 30px 0 0 0; }
+.cta-block h2 { font-size: 80px; margin-bottom: 22px; line-height: 1.0; letter-spacing: -0.01em; }
+.cta-block .lede { margin: 0 auto 44px auto; }
+.cta-buttons { display: inline-flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+.cta-btn { padding: 18px 32px; font-family: 'Bebas Neue', sans-serif; font-size: 17px; letter-spacing: 0.18em; border: 1.5px solid var(--accent); color: var(--accent); transition: all 0.25s; }
+.cta-btn:hover { background: var(--accent); color: var(--text); }
+.cta-btn.primary { background: var(--accent); color: var(--text); }
+.cta-btn.primary:hover { background: #16A34A; border-color: #16A34A; }
+
+/* FOOTER */
+.footer { padding: 60px 0 40px; border-top: 1px solid var(--line-soft); }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dim); }
+.footer-inner img { height: 18px; opacity: 0.6; filter: brightness(0) invert(1); }
+
+@media (max-width: 980px) {
+  .hero-grid, .feature-row, .venue-grid, .kit-feature-row { grid-template-columns: 1fr; gap: 40px; }
+  .feature-row.reverse .feature-image, .feature-row.reverse .feature-text { order: initial; }
+  .hero h1 { font-size: 64px; }
+  .hero h1 .smaller { font-size: 36px; }
+  .section h2 { font-size: 44px; }
+  .event-quote { font-size: 30px; }
+  .numbers-grid, .brings-grid, .groups-grid, .schedule-grid, .finals-grid, .format-summary, .rules-grid, .location-strip, .event-meta-grid { grid-template-columns: 1fr 1fr; }
+  .kits-row { grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  .venue-photos { min-height: 400px; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="assets/bllrs-wordmark.png" alt="BLLRS">
+      <span class="divider"></span>
+      <span class="sub">SPTCC TOURNAMENT · BANGKOK</span>
+    </a>
+    <div class="nav-links">
+      <a href="#event">EVENT</a>
+      <a href="#venue">VENUE</a>
+      <a href="#format">FORMAT</a>
+      <a href="#kits">KITS</a>
+      <a href="#partners">PARTNERS</a>
+    </div>
+    <a href="#contact" class="nav-cta">Become a partner</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-tag">PITCH BRIEF · BALLERS × SPTCC × LALIGA</div>
+        <h1>SPTCC<br>FOOTBALL<br><span class="smaller">TOURNAMENT</span></h1>
+        <p class="hero-sub">A Spanish football culture festival in Bangkok, hosted at BALLERS Bangkok on Saturday 27 June 2026. Spanish, Thai and international communities, united through the passion of the Spanish game.</p>
+        <div class="hero-stats">
+          <div class="stat"><div class="num"><span class="ic">●</span>27/06</div><div class="label">Event Day</div></div>
+          <div class="stat"><div class="num">10–18<span class="ic">h</span></div><div class="label">Full Day</div></div>
+          <div class="stat"><div class="num">8</div><div class="label">Teams</div></div>
+          <div class="stat"><div class="num">~100</div><div class="label">Players</div></div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-image-logos">
+          <img class="tall" src="assets/bllrs-wordmark.png" alt="BLLRS">
+          <img src="assets/ballers-bb-white.png" alt="BB">
+          <img src="assets/sptcc-logo.svg" alt="SPTCC" style="filter:none; height:22px;">
+          <img src="assets/laliga-logo.svg" alt="LaLiga">
+          <img src="assets/volt-logo.png" alt="Volt">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE EVENT -->
+<section class="section" id="event">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">01 · THE EVENT</div>
+      <h2>The Spanish game,<br>in Bangkok.</h2>
+    </div>
+    <p class="event-quote">An event designed to <span class="green">celebrate connection, competition and community</span> — while showcasing the energy, creativity and global influence of Spanish football culture, with LaLiga participating directly through on-site skill challenges, a fan booth and branded experiences.</p>
+    <div class="event-meta-grid">
+      <div class="event-meta-cell"><div class="lbl">Date</div><div class="val">Saturday 27 June 2026</div></div>
+      <div class="event-meta-cell"><div class="lbl">Venue</div><div class="val">BALLERS Bangkok — Huai Kwang</div></div>
+      <div class="event-meta-cell"><div class="lbl">Hosted with</div><div class="val">SPTCC · LaLiga · Volt</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BY THE NUMBERS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">02 · BY THE NUMBERS</div>
+      <h2>What the day looks like.</h2>
+      <p class="lede">8 teams, 2 pitches in parallel, 16 matches across the day — built for community engagement in the morning and competitive intensity in the afternoon finals.</p>
+    </div>
+    <div class="numbers-grid">
+      <div class="numbers-cell"><div class="big"><span class="ic">●</span>8</div><div class="lbl">Teams</div></div>
+      <div class="numbers-cell"><div class="big">2</div><div class="lbl">Pitches in parallel</div></div>
+      <div class="numbers-cell"><div class="big">~100</div><div class="lbl">Players on the day</div></div>
+      <div class="numbers-cell"><div class="big">10–18<span class="ic">h</span></div><div class="lbl">Full event day</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE VENUE -->
+<section class="section" id="venue">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">03 · THE VENUE</div>
+      <h2>BALLERS Bangkok.</h2>
+    </div>
+
+    <div class="venue-grid">
+      <div class="venue-text">
+        <p>A <strong>premium football venue</strong> in central Bangkok — two pitches in parallel, full Performance Center, locker rooms, hydration zone and a built-in Spanish football identity that anchors the day around the right cultural codes.</p>
+        <p>Located in <strong>Huai Kwang, Pracha Uthit Road 23</strong> — accessible for the Spanish, Thai and international communities the SPTCC convenes. Recovery area, mobility studio, on-site staff and full event-day operations.</p>
+        <p>BALLERS Bangkok is built as <strong>the year-round Spanish football home in the city</strong>. The tournament is the natural amplification of that identity — and the venue is purpose-fit for the scale of the event.</p>
+      </div>
+      <div class="venue-photos">
+        <div class="pic tall" style="background-image:url('assets/venue-training.jpg');"></div>
+        <div class="pic" style="background-image:url('assets/venue-1.jpg');"></div>
+        <div class="pic" style="background-image:url('assets/venue-2.jpg');"></div>
+      </div>
+    </div>
+
+    <div class="location-strip">
+      <div class="cell">
+        <div class="lbl">ADDRESS</div>
+        <div class="val">781/1 Pracha Uthit Road<span class="muted">Sam Sen Nok, Huai Khwang, Bangkok 10310</span></div>
+      </div>
+      <div class="cell">
+        <div class="lbl">FACILITY</div>
+        <div class="val">2× Pitches + Performance Center<span class="muted">300 m² PC · 7-a-side + 9-a-side</span></div>
+      </div>
+      <div class="cell">
+        <div class="lbl">ACCESS</div>
+        <div class="val">MRT Huai Khwang · Parking on-site<span class="muted">15 min from Sukhumvit · Central BKK</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMAT — full SPTCC redesign -->
+<section class="section" id="format">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">04 · TOURNAMENT FORMAT</div>
+      <h2>16 matches, one day, one champion.</h2>
+      <p class="lede">Two groups of four. Round-robin within each group, then four positional finals. Designed so every team plays competitive football until the final whistle.</p>
+    </div>
+
+    <!-- Phase 1: Groups -->
+    <div class="format-phase-header">
+      <div class="tag">PHASE 1</div>
+      <h3>Group stage — 2 groups of 4.</h3>
+    </div>
+    <div class="groups-grid">
+      <div class="group-card group-a">
+        <div class="group-label">GROUP</div>
+        <div class="group-name">A</div>
+        <div class="teams">
+          <div class="team"><span class="badge">A1</span> Team A1</div>
+          <div class="team"><span class="badge">A2</span> Team A2</div>
+          <div class="team"><span class="badge">A3</span> Team A3</div>
+          <div class="team"><span class="badge">A4</span> Team A4</div>
+        </div>
+      </div>
+      <div class="group-card group-b">
+        <div class="group-label">GROUP</div>
+        <div class="group-name">B</div>
+        <div class="teams">
+          <div class="team"><span class="badge">B1</span> Team B1</div>
+          <div class="team"><span class="badge">B2</span> Team B2</div>
+          <div class="team"><span class="badge">B3</span> Team B3</div>
+          <div class="team"><span class="badge">B4</span> Team B4</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Group Stage Schedule -->
+    <div class="schedule-block">
+      <div class="schedule-title">GROUP STAGE SCHEDULE · EVERY TEAM PLAYS 3 MATCHES</div>
+      <div class="schedule-grid">
+        <div class="matchday">
+          <div class="md-label">MATCHDAY 1</div>
+          <div class="match a"><span class="team-id">A1</span><span class="vs">VS</span><span class="team-id">A2</span></div>
+          <div class="match a"><span class="team-id">A3</span><span class="vs">VS</span><span class="team-id">A4</span></div>
+          <div class="match b"><span class="team-id">B1</span><span class="vs">VS</span><span class="team-id">B2</span></div>
+          <div class="match b"><span class="team-id">B3</span><span class="vs">VS</span><span class="team-id">B4</span></div>
+        </div>
+        <div class="matchday">
+          <div class="md-label">MATCHDAY 2</div>
+          <div class="match a"><span class="team-id">A1</span><span class="vs">VS</span><span class="team-id">A3</span></div>
+          <div class="match a"><span class="team-id">A2</span><span class="vs">VS</span><span class="team-id">A4</span></div>
+          <div class="match b"><span class="team-id">B1</span><span class="vs">VS</span><span class="team-id">B3</span></div>
+          <div class="match b"><span class="team-id">B2</span><span class="vs">VS</span><span class="team-id">B4</span></div>
+        </div>
+        <div class="matchday">
+          <div class="md-label">MATCHDAY 3</div>
+          <div class="match a"><span class="team-id">A1</span><span class="vs">VS</span><span class="team-id">A4</span></div>
+          <div class="match a"><span class="team-id">A2</span><span class="vs">VS</span><span class="team-id">A3</span></div>
+          <div class="match b"><span class="team-id">B1</span><span class="vs">VS</span><span class="team-id">B4</span></div>
+          <div class="match b"><span class="team-id">B2</span><span class="vs">VS</span><span class="team-id">B3</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Points + Tiebreaks -->
+    <div class="rules-grid">
+      <div class="rule-card">
+        <div class="lbl">POINT SYSTEM</div>
+        <div class="points-list">
+          <div class="p"><div class="val">3</div><div class="lab">WIN</div></div>
+          <div class="p"><div class="val">1</div><div class="lab">DRAW</div></div>
+          <div class="p"><div class="val">0</div><div class="lab">LOSS</div></div>
+        </div>
+      </div>
+      <div class="rule-card">
+        <div class="lbl">TIE-BREAKING CRITERIA</div>
+        <ol class="tiebreak-list">
+          <li><span class="n">01</span> Goal difference</li>
+          <li><span class="n">02</span> Goals scored</li>
+          <li><span class="n">03</span> Head-to-head result</li>
+          <li><span class="n">04</span> Draw or penalty shootout</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Phase 2 — Finals -->
+    <div class="format-phase-header">
+      <div class="tag">PHASE 2</div>
+      <h3>Finals by position — 4 matches.</h3>
+    </div>
+    <div class="finals-block">
+      <div class="finals-grid">
+        <div class="final-card champion">
+          <div class="ord">1<small style="font-size:18px;">ST</small></div>
+          <div class="pair">1<sup>st</sup> Group A<br><span class="vs">VS</span><br>1<sup>st</sup> Group B</div>
+          <div class="arrow">↓</div>
+          <div class="prize">CHAMPION</div>
+        </div>
+        <div class="final-card">
+          <div class="ord">2<small style="font-size:18px;">ND</small></div>
+          <div class="pair">2<sup>nd</sup> Group A<br><span class="vs">VS</span><br>2<sup>nd</sup> Group B</div>
+          <div class="arrow">↓</div>
+          <div class="prize">3<sup>RD</sup> PLACE</div>
+        </div>
+        <div class="final-card">
+          <div class="ord">3<small style="font-size:18px;">RD</small></div>
+          <div class="pair">3<sup>rd</sup> Group A<br><span class="vs">VS</span><br>3<sup>rd</sup> Group B</div>
+          <div class="arrow">↓</div>
+          <div class="prize">5<sup>TH</sup> PLACE</div>
+        </div>
+        <div class="final-card">
+          <div class="ord">4<small style="font-size:18px;">TH</small></div>
+          <div class="pair">4<sup>th</sup> Group A<br><span class="vs">VS</span><br>4<sup>th</sup> Group B</div>
+          <div class="arrow">↓</div>
+          <div class="prize">7<sup>TH</sup> PLACE</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="format-summary">
+      <div class="cell"><div class="big">12</div><div class="lbl">Group stage matches</div></div>
+      <div class="cell"><div class="big">4</div><div class="lbl">Position finals</div></div>
+      <div class="cell"><div class="big"><span class="ic">●</span>16</div><div class="lbl">Total matches</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- KITS BY VOLT -->
+<section class="section" id="kits">
+  <div class="container">
+    <div class="kit-feature-row">
+      <div class="feature-text">
+        <div class="kit-feature-eyebrow">05 · THE KITS · BY VOLT</div>
+        <h3>Spanish club identity,<br>tournament-wide.</h3>
+        <p>Official tournament jerseys designed by <strong>Volt</strong> for BALLERS Bangkok, inspired by the iconic colorways of <strong>Villarreal, FC Barcelona, Real Madrid, Atlético Madrid and Real Betis</strong>.</p>
+        <p>Each kit combines performance, style and football culture through bold designs adapted to the spirit of the Spanish game — every player on the pitch wearing the visual identity of a Spanish club, the BLLRS wordmark across the chest as main sponsor, Volt and BALLERS Bangkok on the flanks.</p>
+      </div>
+      <div class="kits-photo-wrap">
+        <img src="assets/jerseys.png" alt="BLLRS × Volt tournament kits — 5 designs inspired by Spanish La Liga clubs" class="kits-photo">
+        <div class="kits-strip">
+          <span>BLAUGRANA</span><span>ROJIBLANCO</span><span>VERDIBLANCO</span><span>YELLOW</span><span>BLUE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LALIGA ACTIVATIONS -->
+<section class="section">
+  <div class="container">
+    <div class="feature-row reverse laliga-row">
+      <div class="feature-image laliga-image"></div>
+      <div class="feature-text">
+        <div class="feature-eyebrow">06 · LALIGA ACTIVATIONS</div>
+        <h3>The crossbar,<br>the booth, the brand.</h3>
+        <p>LaLiga brings interactive football experiences directly to the event — <strong>skill-based challenges, fan activations, entertainment, exclusive giveaways</strong> and an official branded booth designed to celebrate the culture and excitement of Spanish football.</p>
+        <p>Crossbar challenge. Free-kick challenge. Photo wall. Live commentary. The day reads, sounds and feels like LaLiga.</p>
+        <p style="font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:0.06em; color:var(--accent); margin-top:24px;">La fuerza de nuestro fútbol.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT BALLERS BRINGS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">07 · WHAT BALLERS BRINGS</div>
+      <h2>The venue partnership.</h2>
+      <p class="lede">BALLERS Bangkok hosts the tournament at a preferential partnership rate — below standard commercial rate — because the brand alignment is what we are building for.</p>
+    </div>
+    <div class="brings-grid">
+      <div class="brings-cell">
+        <div class="num">01</div>
+        <div class="title">TWO PITCHES, FULL DAY</div>
+        <div class="desc">Both pitches available simultaneously across the entire event day, 10:00 to 18:00, with setup and cleanup included.</div>
+      </div>
+      <div class="brings-cell">
+        <div class="num">02</div>
+        <div class="title">PERFORMANCE CENTER ACCESS</div>
+        <div class="desc">Full access to the BALLERS Performance Center — recovery area, mobility studio and hydration zone for participating players.</div>
+      </div>
+      <div class="brings-cell">
+        <div class="num">03</div>
+        <div class="title">VENUE OPS + STAFF</div>
+        <div class="desc">On-site team coordinating logistics, safety, locker rooms and the smooth flow of the day around the format.</div>
+      </div>
+      <div class="brings-cell">
+        <div class="num">04</div>
+        <div class="title">BRAND INTEGRATION</div>
+        <div class="desc">BALLERS Bangkok positioned alongside SPTCC and LaLiga as the official venue partner across signage and event materials.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners" id="partners">
+  <div class="container">
+    <div class="partners-label">EVENT PARTNERS</div>
+    <div class="partners-grid">
+      <div class="partner-logo invert">
+        <img src="assets/bllrs-wordmark.png" alt="BLLRS">
+        <span class="tag">Master brand</span>
+      </div>
+      <div class="partner-logo">
+        <img class="tall" src="assets/ballers-bb-white.png" alt="BALLERS Bangkok">
+        <span class="tag">Venue partner</span>
+      </div>
+      <div class="partner-logo">
+        <img src="assets/sptcc-logo.svg" alt="SPTCC">
+        <span class="tag">Spanish-Thai Chamber</span>
+      </div>
+      <div class="partner-logo invert">
+        <img src="assets/laliga-logo.svg" alt="LaLiga">
+        <span class="tag">Official activations</span>
+      </div>
+      <div class="partner-logo">
+        <img src="assets/volt-logo.png" alt="Volt" style="max-height:48px;">
+        <span class="tag">Official kits</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / CTA -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="cta-block">
+      <div class="section-num" style="text-align:center;">08 · NEXT STEP</div>
+      <h2>Let's build this together.</h2>
+      <p class="lede">Saturday 27 June 2026 · BALLERS Bangkok. For partnership terms, sponsorship slots and event coordination — get in touch and we lock the path in a single conversation.</p>
+      <div class="cta-buttons">
+        <a href="#" class="cta-btn primary">Become a partner</a>
+        <a href="#" class="cta-btn">Download the brief</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div><img src="assets/bllrs-wordmark.png" alt="BLLRS"></div>
+    <div>SPTCC FOOTBALL TOURNAMENT · BANGKOK · 27 JUNE 2026</div>
+    <div>© BALLERS BANGKOK 2026</div>
+  </div>
+</footer>
+
+</body>
+</html>
