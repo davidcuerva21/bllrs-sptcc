@@ -79,6 +79,7 @@ a { color: inherit; text-decoration: none; }
 .hero-image-logos .lg { display: flex; align-items: center; gap: 6px; font-family: 'Bebas Neue', sans-serif; font-size: 10px; letter-spacing: 0.22em; color: rgba(255,255,255,0.85); }
 .hero-image-logos img { height: 16px; width: auto; filter: brightness(0) invert(1); opacity: 0.92; }
 .hero-image-logos img.tall { height: 24px; }
+.hero-image-logos img.volt-mark { filter: none; mix-blend-mode: screen; opacity: 1; height: 26px; }
 
 /* SECTION HEADER */
 .section-header { margin-bottom: 64px; max-width: 900px; }
@@ -106,7 +107,7 @@ a { color: inherit; text-decoration: none; }
 .venue-text { display: flex; flex-direction: column; justify-content: center; padding-right: 24px; }
 .venue-text p { color: var(--muted); font-size: 17px; line-height: 1.65; margin-bottom: 18px; font-weight: 300; }
 .venue-text p strong { color: var(--text); font-weight: 500; }
-.venue-photos { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; min-height: 540px; }
+.venue-photos { display: grid; grid-template-columns: 1.1fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; min-height: 580px; }
 .venue-photos .pic { background-size: cover; background-position: center; border: 1px solid var(--line); filter: grayscale(10%) contrast(1.05); }
 .venue-photos .tall { grid-row: span 2; }
 
@@ -237,6 +238,7 @@ a { color: inherit; text-decoration: none; }
 .partner-logo .tag { font-family: 'Bebas Neue', sans-serif; font-size: 10px; letter-spacing: 0.22em; color: var(--muted); }
 .partner-logo .text-mark { font-family: 'Bebas Neue', sans-serif; font-size: 32px; letter-spacing: 0.12em; color: var(--text); }
 .partner-logo:hover { opacity: 1; }
+.partner-logo.partner-volt img { max-height: 64px; mix-blend-mode: screen; }
 
 /* CONTACT / CTA */
 .cta-block { text-align: center; padding: 30px 0 0 0; }
@@ -309,7 +311,7 @@ a { color: inherit; text-decoration: none; }
           <img src="assets/ballers-bb-white.png" alt="BB">
           <img src="assets/sptcc-logo.svg" alt="SPTCC" style="filter:none; height:22px;">
           <img src="assets/laliga-logo.svg" alt="LaLiga">
-          <img src="assets/volt-logo.png" alt="Volt">
+          <img class="volt-mark" src="assets/volt-logo.png" alt="Volt">
         </div>
       </div>
     </div>
@@ -365,8 +367,10 @@ a { color: inherit; text-decoration: none; }
       </div>
       <div class="venue-photos">
         <div class="pic tall" style="background-image:url('assets/venue-training.jpg');"></div>
-        <div class="pic" style="background-image:url('assets/venue-1.jpg');"></div>
-        <div class="pic" style="background-image:url('assets/venue-2.jpg');"></div>
+        <div class="pic" style="background-image:url('assets/venue-front.jpg');"></div>
+        <div class="pic" style="background-image:url('assets/venue-field.jpg');"></div>
+        <div class="pic" style="background-image:url('assets/venue-lounge.jpg');"></div>
+        <div class="pic" style="background-image:url('assets/venue-team.jpg');"></div>
       </div>
     </div>
 
@@ -606,8 +610,8 @@ a { color: inherit; text-decoration: none; }
         <img src="assets/laliga-logo.svg" alt="LaLiga">
         <span class="tag">Official activations</span>
       </div>
-      <div class="partner-logo">
-        <img src="assets/volt-logo.png" alt="Volt" style="max-height:48px;">
+      <div class="partner-logo partner-volt">
+        <img src="assets/volt-logo.png" alt="Volt">
         <span class="tag">Official kits</span>
       </div>
     </div>
