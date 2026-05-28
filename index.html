@@ -79,7 +79,7 @@ a { color: inherit; text-decoration: none; }
 .hero-image-logos .lg { display: flex; align-items: center; gap: 6px; font-family: 'Bebas Neue', sans-serif; font-size: 10px; letter-spacing: 0.22em; color: rgba(255,255,255,0.85); }
 .hero-image-logos img { height: 16px; width: auto; filter: brightness(0) invert(1); opacity: 0.92; }
 .hero-image-logos img.tall { height: 24px; }
-.hero-image-logos img.volt-mark { filter: none; mix-blend-mode: screen; opacity: 1; height: 26px; }
+.hero-image-logos img.volt-mark { filter: none; opacity: 1; height: 26px; }
 
 /* SECTION HEADER */
 .section-header { margin-bottom: 64px; max-width: 900px; }
@@ -227,6 +227,18 @@ a { color: inherit; text-decoration: none; }
 .brings-cell .title { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.04em; margin-bottom: 8px; }
 .brings-cell .desc { font-size: 14px; color: var(--muted); line-height: 1.6; font-weight: 300; }
 
+/* SPECIAL PRIZES */
+.prizes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); }
+.prize-card { background: var(--bg); padding: 32px 26px; position: relative; text-align: left; }
+.prize-card.lemon { background: #161512; }
+.prize-card .num { font-family: 'Bebas Neue', sans-serif; font-size: 11px; letter-spacing: 0.30em; color: var(--accent); margin-bottom: 14px; }
+.prize-card.lemon .num { color: #E8D442; }
+.prize-card .es-title { font-family: 'Bebas Neue', sans-serif; font-size: 38px; line-height: 1.0; letter-spacing: 0.03em; color: var(--text); margin-bottom: 6px; }
+.prize-card.lemon .es-title { color: #E8D442; }
+.prize-card .en-sub { font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 0.22em; color: var(--muted); margin-bottom: 14px; text-transform: uppercase; }
+.prize-card .desc { font-size: 13px; color: var(--muted); line-height: 1.55; font-weight: 300; }
+.prize-card .lore { font-size: 11px; color: var(--dim); font-style: italic; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line-soft); }
+
 /* PARTNERS strip */
 .partners { padding: 80px 0; background: var(--bg-soft); }
 .partners-label { text-align: center; font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 0.30em; color: var(--muted); margin-bottom: 40px; }
@@ -238,7 +250,7 @@ a { color: inherit; text-decoration: none; }
 .partner-logo .tag { font-family: 'Bebas Neue', sans-serif; font-size: 10px; letter-spacing: 0.22em; color: var(--muted); }
 .partner-logo .text-mark { font-family: 'Bebas Neue', sans-serif; font-size: 32px; letter-spacing: 0.12em; color: var(--text); }
 .partner-logo:hover { opacity: 1; }
-.partner-logo.partner-volt img { max-height: 64px; mix-blend-mode: screen; }
+.partner-logo.partner-volt img { max-height: 64px; }
 
 /* CONTACT / CTA */
 .cta-block { text-align: center; padding: 30px 0 0 0; }
@@ -366,6 +378,11 @@ a { color: inherit; text-decoration: none; }
   .brings-grid { grid-template-columns: 1fr; }
   .brings-cell { padding: 26px 22px; }
   .brings-cell .title { font-size: 19px; }
+  .prizes-grid { grid-template-columns: 1fr 1fr; }
+  .prize-card { padding: 22px 18px; }
+  .prize-card .es-title { font-size: 28px; }
+  .prize-card .en-sub { font-size: 11px; }
+  .prize-card .desc { font-size: 12px; }
 
   .partners { padding: 50px 0; }
   .partners-grid { gap: 28px; justify-content: center; }
@@ -398,6 +415,7 @@ a { color: inherit; text-decoration: none; }
       <a href="#venue">VENUE</a>
       <a href="#format">FORMAT</a>
       <a href="#kits">KITS</a>
+      <a href="#prizes">PRIZES</a>
       <a href="#partners">PARTNERS</a>
     </div>
     <a href="#contact" class="nav-cta">Become a partner</a>
@@ -703,6 +721,51 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
+<!-- SPECIAL PRIZES -->
+<section class="section" id="prizes">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">08 · SPECIAL PRIZES</div>
+      <h2>The trophies behind the trophy.</h2>
+      <p class="lede">Beyond the team standings, four individual awards in the spirit of Spanish football — three for the moments of brilliance, one for the lighter side of the game.</p>
+    </div>
+
+    <div class="prizes-grid">
+      <div class="prize-card">
+        <div class="num">01</div>
+        <div class="es-title">MVP</div>
+        <div class="en-sub">Best Player</div>
+        <div class="desc">The standout of the tournament — the player who shaped the day across both phases. Voted by coaches, refs and partners.</div>
+        <div class="lore">Spanish football tradition: the player you remember a year later.</div>
+      </div>
+
+      <div class="prize-card">
+        <div class="num">02</div>
+        <div class="es-title">PICHICHI</div>
+        <div class="en-sub">Top Scorer</div>
+        <div class="desc">Most goals across group stage and finals combined. Tiebreak: fewest minutes per goal. The hunter.</div>
+        <div class="lore">After Rafael Moreno "Pichichi" — Athletic Bilbao legend, 1900s.</div>
+      </div>
+
+      <div class="prize-card">
+        <div class="num">03</div>
+        <div class="es-title">ZAMORA</div>
+        <div class="en-sub">Best Goalkeeper</div>
+        <div class="desc">Fewest goals conceded across all matches played. The wall behind the wall.</div>
+        <div class="lore">After Ricardo Zamora — Spain national-team keeper, 1920s-30s.</div>
+      </div>
+
+      <div class="prize-card lemon">
+        <div class="num">04</div>
+        <div class="es-title">LIMÓN</div>
+        <div class="en-sub">Tough Day Award</div>
+        <div class="desc">For the player who suffered the most on the pitch — picked by their own teammates. Worn with honour. Taken with humour.</div>
+        <div class="lore">Spanish football tradition: el trofeo limón. Football laughing at itself.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PARTNERS -->
 <section class="partners" id="partners">
   <div class="container">
@@ -736,7 +799,7 @@ a { color: inherit; text-decoration: none; }
 <section class="section" id="contact">
   <div class="container">
     <div class="cta-block">
-      <div class="section-num" style="text-align:center;">08 · NEXT STEP</div>
+      <div class="section-num" style="text-align:center;">09 · NEXT STEP</div>
       <h2>Let's build this together.</h2>
       <p class="lede">Saturday 27 June 2026 · BALLERS Bangkok. For partnership terms, sponsorship slots and event coordination — get in touch and we lock the path in a single conversation.</p>
       <div class="cta-buttons">
