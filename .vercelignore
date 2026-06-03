@@ -1,5 +1,8 @@
 preview*.png
 preview*.jpg
+mobile_v*.png
+*.bak
+*.tmp
 assets/format-reference.png
 assets/hero-sptcc.jpg
 assets/hero.jpg
@@ -10,3 +13,4 @@ assets/g6.jpg
 assets/inside3.jpg
 assets/venue-3.jpg
 .DS_Store
+.git
