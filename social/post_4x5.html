@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Anton&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0A0A0A;
+    color: #FFFFFF;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+  }
+  .bg {
+    position: absolute; inset: 0;
+    background: url('../assets/jerseys-flat.png') center/cover no-repeat;
+    opacity: 0.22;
+    filter: grayscale(15%) contrast(1.05);
+  }
+  .vignette {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(10,10,10,0.55) 100%);
+  }
+  .frame {
+    position: relative; z-index: 2;
+    width: 100%; height: 100%;
+    padding: 72px 72px 64px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; letter-spacing: 0.28em;
+    font-weight: 600; text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+  }
+  .bottom { display: flex; flex-direction: column; gap: 22px; }
+  .date {
+    font-family: 'Anton', 'Bebas Neue', sans-serif;
+    font-style: italic;
+    font-size: 230px;
+    line-height: 0.84;
+    letter-spacing: -0.02em;
+    color: #22C55E;
+    margin-bottom: -8px;
+  }
+  .title-line {
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    line-height: 1.25;
+  }
+  .meta-line {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.62);
+  }
+  .logo-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255,255,255,0.20);
+    margin-top: 6px;
+  }
+  .logo-row img.sptcc { height: 36px; width: auto; filter: brightness(0) invert(1); }
+  .logo-row img.bllrs { height: 26px; width: auto; filter: brightness(0) invert(1); }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="vignette"></div>
+<div class="frame">
+  <div class="top">
+    <span>SPTCC × BALLERS BANGKOK</span>
+    <span>EDITION Nº 1</span>
+  </div>
+  <div class="bottom">
+    <div class="date">27.06.26</div>
+    <div class="title-line">SPTCC Football Tournament 2026</div>
+    <div class="meta-line">BALLERS BANGKOK · HUAI KWANG · 10:00 – 18:00</div>
+    <div class="logo-row">
+      <img class="sptcc" src="../assets/sptcc-logo.svg" alt="SPTCC">
+      <img class="bllrs" src="../assets/bllrs-wordmark.png" alt="BLLRS">
+    </div>
+  </div>
+</div>
+</body>
+</html>

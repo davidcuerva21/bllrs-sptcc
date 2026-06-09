@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SPTCC Football Tournament — BALLERS Bangkok · 27 June 2026</title>
-<meta name="description" content="A Spanish football culture festival in Bangkok — hosted at BALLERS Bangkok on Saturday 27 June 2026. 8 teams, 2 pitches, ~100 players. Spanish, Thai and international communities, united through the passion of the Spanish game.">
+<meta name="description" content="A Spanish football culture festival in Bangkok — hosted at BALLERS Bangkok on Saturday 27 June 2026. 6 teams, 2 pitches, 9 matches. Spanish, Thai and international communities, united through the passion of the Spanish game.">
 <link rel="canonical" href="https://bllrs-sptcc.vercel.app/">
 
 <!-- Open Graph -->
@@ -12,19 +12,19 @@
 <meta property="og:site_name" content="BLLRS × SPTCC">
 <meta property="og:url" content="https://bllrs-sptcc.vercel.app/">
 <meta property="og:title" content="SPTCC Football Tournament — BALLERS Bangkok · 27 June 2026">
-<meta property="og:description" content="A Spanish football culture festival in Bangkok. 8 teams, 2 pitches, ~100 players. Hosted at BALLERS Bangkok on Saturday 27 June 2026.">
-<meta property="og:image" content="https://bllrs-sptcc.vercel.app/assets/hero.jpg">
+<meta property="og:description" content="A Spanish football culture festival in Bangkok. 6 teams, 2 pitches, 9 matches. Hosted at BALLERS Bangkok on Saturday 27 June 2026.">
+<meta property="og:image" content="https://bllrs-sptcc.vercel.app/assets/og-event.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="BALLERS Bangkok — SPTCC Football Tournament hero image">
+<meta property="og:image:alt" content="SPTCC Football Tournament — tournament jerseys by Volt for BALLERS Bangkok">
 <meta property="og:locale" content="en_US">
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://bllrs-sptcc.vercel.app/">
 <meta name="twitter:title" content="SPTCC Football Tournament — BALLERS Bangkok · 27 June 2026">
-<meta name="twitter:description" content="A Spanish football culture festival in Bangkok. 8 teams, 2 pitches, ~100 players. Saturday 27 June 2026.">
-<meta name="twitter:image" content="https://bllrs-sptcc.vercel.app/assets/hero.jpg">
+<meta name="twitter:description" content="A Spanish football culture festival in Bangkok. 6 teams, 2 pitches, 9 matches. Saturday 27 June 2026.">
+<meta name="twitter:image" content="https://bllrs-sptcc.vercel.app/assets/og-event.jpg">
 
 <!-- Theme -->
 <meta name="theme-color" content="#0A0A0A">
@@ -118,6 +118,21 @@ a { color: inherit; text-decoration: none; }
 .event-quote { font-family: 'Bebas Neue', sans-serif; font-size: 44px; line-height: 1.1; max-width: 1000px; letter-spacing: 0.005em; }
 .event-quote .green { color: var(--accent); }
 .event-meta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 64px; background: var(--line-soft); border: 1px solid var(--line-soft); }
+.event-meta-grid.event-meta-grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* AGE BANNER */
+.age-banner { display: flex; align-items: center; gap: 16px; padding: 18px 22px; margin-top: 24px; background: var(--accent-soft); border: 1px solid var(--accent-line); border-left: 3px solid var(--accent); }
+.age-banner .age-pill { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 0.10em; padding: 6px 14px; background: var(--accent); color: var(--bg); flex-shrink: 0; }
+.age-banner .age-text { font-size: 14px; color: var(--text); line-height: 1.45; font-weight: 400; }
+.age-banner .age-text strong { color: var(--accent); font-weight: 700; }
+
+/* BRINGS CELL HIGHLIGHT */
+.brings-cell.brings-cell-highlight { background: var(--bg-card); border-left: 2px solid var(--accent); }
+.brings-cell.brings-cell-highlight .desc strong { color: var(--accent); font-weight: 600; }
+
+/* LINE BUTTON */
+.sc-btn.line { background: #06C755; color: #FFFFFF; }
+.sc-btn.line:hover { transform: translateY(-2px); box-shadow: 0 12px 30px -10px rgba(6,199,85,0.5); }
 .event-meta-cell { background: var(--bg); padding: 28px 26px; }
 .event-meta-cell .lbl { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
 .event-meta-cell .val { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.02em; }
@@ -184,7 +199,7 @@ a { color: inherit; text-decoration: none; }
 .tiebreak-list li .n { font-family: 'Bebas Neue', sans-serif; font-size: 15px; color: var(--accent); min-width: 24px; letter-spacing: 0.05em; }
 
 .finals-block { margin-bottom: 56px; }
-.finals-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); }
+.finals-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); }
 .final-card { background: var(--bg); padding: 26px 22px; text-align: center; position: relative; }
 .final-card .ord { font-family: 'Bebas Neue', sans-serif; font-size: 36px; line-height: 1.0; color: var(--accent); letter-spacing: 0.02em; margin-bottom: 8px; }
 .final-card .pair { font-family: 'Bebas Neue', sans-serif; font-size: 15px; color: var(--text); letter-spacing: 0.08em; margin-bottom: 10px; line-height: 1.3; }
@@ -192,6 +207,60 @@ a { color: inherit; text-decoration: none; }
 .final-card .arrow { font-size: 12px; color: var(--muted); margin: 6px 0; }
 .final-card .prize { font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 0.18em; color: var(--text); border: 1px solid var(--accent-line); background: var(--accent-soft); padding: 6px 8px; }
 .final-card.champion .prize { background: var(--accent); color: var(--text); border-color: var(--accent); }
+
+.day-timeline { display: flex; flex-direction: column; border: 1px solid var(--line); margin-bottom: 36px; }
+.tl-row { display: grid; grid-template-columns: 180px 1fr; gap: 24px; padding: 18px 22px; border-bottom: 1px solid var(--line-soft); align-items: center; }
+.tl-row:last-child { border-bottom: 0; }
+.tl-row.break { background: var(--bg-soft); }
+.tl-time { font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 0.10em; color: var(--accent); }
+.tl-event { font-size: 14px; color: var(--text); line-height: 1.5; }
+.tl-event.final { font-size: 16px; }
+.tl-event strong { font-weight: 700; }
+.kits-photo-stack { display: grid; gap: 18px; }
+.kits-photo-stack .kit-photo-label { font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 0.28em; color: var(--accent); margin-bottom: 8px; }
+.kits-options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 36px; }
+.kits-option-cell { background: var(--bg); padding: 28px 26px; }
+.kits-option-cell .num { font-family: 'Bebas Neue', sans-serif; font-size: 32px; color: var(--accent); line-height: 1; margin-bottom: 10px; }
+.kits-option-cell .title { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.04em; margin-bottom: 8px; }
+.kits-option-cell .body { font-size: 13px; line-height: 1.55; color: var(--muted); }
+
+/* REGISTER section */
+.register-intro { max-width: 720px; margin: 0 auto 48px; text-align: center; }
+.register-intro .lede { font-size: 17px; line-height: 1.55; color: var(--muted); }
+.register-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.register-card { position: relative; background: var(--bg-soft); border: 1px solid var(--line); padding: 44px 36px; display: flex; flex-direction: column; transition: border-color 0.25s ease, background 0.25s ease; }
+.register-card:hover { border-color: var(--accent-line); background: var(--bg-card); }
+.register-card.solo { background: var(--bg-card); }
+.register-card .reg-tag { font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 0.30em; color: var(--accent); margin-bottom: 18px; }
+.register-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 38px; line-height: 1.0; letter-spacing: -0.005em; margin-bottom: 18px; }
+.register-card p { font-size: 14px; line-height: 1.6; color: var(--muted); margin-bottom: 28px; flex-grow: 1; }
+.register-card .reg-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 18px 28px; background: var(--accent); color: var(--bg); font-family: 'Bebas Neue', sans-serif; font-size: 17px; letter-spacing: 0.18em; text-decoration: none; text-transform: uppercase; transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease; }
+.register-card .reg-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px -10px rgba(34,197,94,0.45); }
+.register-card .reg-btn .arrow { font-size: 19px; transition: transform 0.25s ease; }
+.register-card .reg-btn:hover .arrow { transform: translateX(4px); }
+.register-card .reg-btn.ghost { background: transparent; color: var(--text); border: 1px solid var(--accent); }
+.register-card .reg-btn.ghost:hover { background: var(--accent); color: var(--bg); }
+.register-tagline { text-align: center; margin-top: 48px; font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.08em; color: var(--text); }
+.register-tagline .green { color: var(--accent); }
+
+/* PRICING block */
+.pricing-block { margin: 0 auto 48px; }
+.pricing-title { font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 0.30em; color: var(--accent); text-align: center; margin-bottom: 22px; }
+.pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.pricing-grid.pricing-grid-single { grid-template-columns: 1fr; max-width: 620px; margin: 0 auto; }
+.pricing-card { background: var(--bg-soft); padding: 36px 32px; display: flex; flex-direction: column; transition: background 0.25s ease; }
+.pricing-card.included { background: var(--bg-card); }
+.pricing-card:hover { background: var(--bg-card); }
+.pricing-card .pc-label { font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 0.26em; color: var(--muted); margin-bottom: 14px; }
+.pricing-card .pc-price { font-family: 'Bebas Neue', sans-serif; font-size: 78px; line-height: 0.95; letter-spacing: -0.02em; color: var(--text); display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+.pricing-card .pc-price .currency { font-size: 26px; color: var(--accent); letter-spacing: 0.10em; }
+.pricing-card .pc-unit { font-size: 12px; letter-spacing: 0.20em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+.pricing-card .pc-includes { font-size: 14px; color: var(--text); line-height: 1.5; flex-grow: 1; }
+.pricing-card .pc-includes strong { color: var(--accent); font-weight: 600; }
+.pricing-card .pc-team { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 12px; letter-spacing: 0.10em; color: var(--muted); text-transform: uppercase; }
+.pricing-card .pc-team strong { color: var(--text); font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 0.08em; }
+.pricing-note { text-align: center; margin-top: 18px; font-size: 13px; color: var(--muted); }
+.pricing-note strong { color: var(--text); }
 
 .format-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); }
 .format-summary .cell { background: var(--bg); padding: 28px 28px; text-align: center; }
@@ -202,6 +271,10 @@ a { color: inherit; text-decoration: none; }
 /* KITS — CSS jersey row */
 .kits-photo-wrap { width: 100%; }
 .kits-photo { width: 100%; height: auto; display: block; border: 1px solid var(--line); background: var(--bg-soft); }
+.kits-photo-full { margin: 12px 0 8px; }
+.kits-photo-full .kits-photo { object-fit: cover; max-height: 460px; }
+.kits-header { text-align: center; max-width: 720px; margin-left: auto; margin-right: auto; }
+.kits-header .lede { font-size: 16px; line-height: 1.6; color: var(--muted); margin-top: 18px; }
 .kits-strip { display: flex; justify-content: space-between; margin-top: 14px; padding: 12px 4px 0; border-top: 1px solid var(--line); font-family: 'Bebas Neue', sans-serif; font-size: 11px; letter-spacing: 0.22em; color: var(--muted); }
 .kits-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; margin: 18px 0 30px; }
 .jersey { aspect-ratio: 3/4; background: var(--bg-soft); border: 1px solid var(--line); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
@@ -279,6 +352,42 @@ a { color: inherit; text-decoration: none; }
 .partner-logo:hover { opacity: 1; }
 .partner-logo.partner-volt img { max-height: 64px; }
 
+/* SPONSOR PACKAGES */
+.sponsor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 980px; margin: 0 auto; }
+.sponsor-card { background: var(--bg-soft); border: 1px solid var(--line); padding: 44px 36px; display: flex; flex-direction: column; transition: border-color 0.25s ease, background 0.25s ease; }
+.sponsor-card:hover { border-color: var(--accent-line); background: var(--bg-card); }
+.sponsor-card.featured { background: var(--bg-card); border-color: var(--accent-line); }
+.sponsor-card .sp-tier { font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 0.28em; color: var(--accent); margin-bottom: 22px; }
+.sponsor-card .sp-price { font-family: 'Bebas Neue', sans-serif; font-size: 68px; line-height: 0.95; letter-spacing: -0.02em; color: var(--text); display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; }
+.sponsor-card .sp-price .currency { font-size: 24px; color: var(--accent); letter-spacing: 0.10em; }
+.sponsor-card .sp-unit { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 28px; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+.sponsor-card .sp-list { list-style: none; padding: 0; margin: 0 0 32px 0; flex-grow: 1; }
+.sponsor-card .sp-list li { font-size: 14px; line-height: 1.5; color: var(--text); padding: 8px 0 8px 22px; position: relative; }
+.sponsor-card .sp-list li::before { content: '+'; position: absolute; left: 0; top: 8px; color: var(--accent); font-family: 'Bebas Neue', sans-serif; font-size: 14px; font-weight: 700; }
+.sponsor-card .sp-list li em { color: var(--muted); font-style: italic; }
+.sponsor-card .sp-cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 24px; background: transparent; color: var(--text); border: 1px solid var(--accent); font-family: 'Bebas Neue', sans-serif; font-size: 15px; letter-spacing: 0.18em; text-decoration: none; text-transform: uppercase; transition: all 0.25s ease; }
+.sponsor-card .sp-cta:hover { background: var(--accent); color: var(--bg); }
+.sponsor-card .sp-cta.primary { background: var(--accent); color: var(--bg); }
+.sponsor-card .sp-cta.primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px -10px rgba(34,197,94,0.45); }
+.sponsor-card .sp-cta .arrow { font-size: 17px; transition: transform 0.25s ease; }
+.sponsor-card .sp-cta:hover .arrow { transform: translateX(4px); }
+.sponsor-note { text-align: center; margin-top: 32px; font-size: 13px; color: var(--muted); letter-spacing: 0.02em; }
+.sponsor-grid.sponsor-grid-3 { grid-template-columns: 1fr 1fr 1fr; max-width: 1180px; }
+.sponsor-card .sp-fine { font-size: 11.5px; color: var(--muted); font-style: italic; line-height: 1.45; margin: -8px 0 24px; padding: 10px 14px; border-left: 2px solid var(--accent); background: rgba(34,197,94,0.04); }
+
+/* SPONSOR CONTACT BLOCK */
+.sponsor-contact { margin-top: 56px; padding: 44px 40px; background: var(--bg-card); border: 1px solid var(--accent-line); text-align: center; max-width: 820px; margin-left: auto; margin-right: auto; }
+.sponsor-contact .sc-label { font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 0.30em; color: var(--accent); margin-bottom: 14px; }
+.sponsor-contact .sc-text { font-size: 16px; color: var(--text); line-height: 1.55; margin-bottom: 28px; max-width: 560px; margin-left: auto; margin-right: auto; font-weight: 300; }
+.sponsor-contact .sc-text strong { color: var(--accent); font-weight: 600; }
+.sponsor-contact .sc-buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.sc-btn { display: inline-flex; align-items: center; gap: 12px; padding: 16px 26px; font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; transition: all 0.25s ease; border: 1px solid transparent; }
+.sc-btn .sc-ic { font-size: 14px; }
+.sc-btn.whatsapp { background: #25D366; color: #0A0A0A; }
+.sc-btn.whatsapp:hover { transform: translateY(-2px); box-shadow: 0 12px 30px -10px rgba(37,211,102,0.5); }
+.sc-btn.email { background: transparent; color: var(--text); border-color: var(--accent); }
+.sc-btn.email:hover { background: var(--accent); color: var(--bg); }
+
 /* CONTACT / CTA */
 .cta-block { text-align: center; padding: 30px 0 0 0; }
 .cta-block h2 { font-size: 80px; margin-bottom: 22px; line-height: 1.0; letter-spacing: -0.01em; }
@@ -302,7 +411,14 @@ a { color: inherit; text-decoration: none; }
   .hero h1 .smaller { font-size: 40px; }
   .section h2 { font-size: 48px; }
   .event-quote { font-size: 32px; }
-  .numbers-grid, .brings-grid, .groups-grid, .schedule-grid, .finals-grid, .format-summary, .rules-grid, .location-strip, .event-meta-grid { grid-template-columns: 1fr 1fr; }
+  .numbers-grid, .brings-grid, .groups-grid, .schedule-grid, .format-summary, .rules-grid, .location-strip, .event-meta-grid, .event-meta-grid.event-meta-grid-4 { grid-template-columns: 1fr 1fr; }
+  .sponsor-grid, .sponsor-grid.sponsor-grid-3 { grid-template-columns: 1fr; gap: 16px; }
+  .sponsor-card { padding: 32px 26px; }
+  .sponsor-card .sp-price { font-size: 56px; }
+  .sponsor-contact { padding: 32px 24px; margin-top: 36px; }
+  .sponsor-contact .sc-buttons { flex-direction: column; gap: 10px; }
+  .sc-btn { width: 100%; justify-content: center; }
+  .finals-grid { grid-template-columns: repeat(3, 1fr); }
   .sorteos-grid { grid-template-columns: 1fr 1fr; }
   .sorteos-grid .prize-card:last-child { grid-column: 1 / -1; }
   .kits-row { grid-template-columns: repeat(5, 1fr); gap: 8px; }
@@ -383,7 +499,7 @@ a { color: inherit; text-decoration: none; }
   .points-list .p .val { font-size: 22px; }
   .points-list .p .lab { font-size: 10px; letter-spacing: 0.16em; }
 
-  .finals-grid { grid-template-columns: 1fr 1fr; }
+  .finals-grid { grid-template-columns: 1fr; }
   .final-card { padding: 20px 14px; }
   .final-card .ord { font-size: 28px; }
   .final-card .pair { font-size: 13px; }
@@ -393,6 +509,19 @@ a { color: inherit; text-decoration: none; }
   .format-summary .cell { padding: 20px 18px; }
   .format-summary .cell:last-child { grid-column: 1 / -1; }
   .format-summary .cell .big { font-size: 44px; }
+
+  .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-card { padding: 28px 22px; }
+  .pricing-card .pc-price { font-size: 56px; }
+  .register-grid { grid-template-columns: 1fr; gap: 16px; }
+  .register-card { padding: 32px 24px; }
+  .register-card h3 { font-size: 30px; }
+  .register-card .reg-btn { padding: 16px 22px; font-size: 15px; }
+  .register-tagline { font-size: 17px; }
+  .kits-options-grid { grid-template-columns: 1fr; }
+  .day-timeline .tl-row { grid-template-columns: 1fr; gap: 6px; padding: 14px 16px; }
+  .day-timeline .tl-time { font-size: 14px; }
+  .day-timeline .tl-event { font-size: 13px; }
 
   .kits-row { grid-template-columns: repeat(2, 1fr); gap: 8px; }
   .kits-strip { font-size: 9px; letter-spacing: 0.14em; flex-wrap: wrap; gap: 6px; justify-content: center; }
@@ -446,9 +575,11 @@ a { color: inherit; text-decoration: none; }
       <a href="#kits">KITS</a>
       <a href="#prizes">PRIZES</a>
       <a href="#sorteos">SORTEOS</a>
+      <a href="#register">REGISTER</a>
       <a href="#partners">PARTNERS</a>
+      <a href="#sponsor">SPONSOR</a>
     </div>
-    <a href="#contact" class="nav-cta">Become a partner</a>
+    <a href="#sponsor" class="nav-cta">Become a sponsor</a>
   </div>
 </nav>
 
@@ -462,9 +593,9 @@ a { color: inherit; text-decoration: none; }
         <p class="hero-sub">A Spanish football culture festival in Bangkok, hosted at BALLERS Bangkok on Saturday 27 June 2026. Spanish, Thai and international communities, united through the passion of the Spanish game.</p>
         <div class="hero-stats">
           <div class="stat"><div class="num"><span class="ic">●</span>27/06</div><div class="label">Event Day</div></div>
-          <div class="stat"><div class="num">10–18<span class="ic">h</span></div><div class="label">Full Day</div></div>
-          <div class="stat"><div class="num">8</div><div class="label">Teams</div></div>
-          <div class="stat"><div class="num">~100</div><div class="label">Players</div></div>
+          <div class="stat"><div class="num">9:30–19:30<span class="ic">h</span></div><div class="label">Full Day</div></div>
+          <div class="stat"><div class="num">6</div><div class="label">Teams</div></div>
+          <div class="stat"><div class="num">9</div><div class="label">Matches</div></div>
         </div>
       </div>
       <div class="hero-image">
@@ -487,10 +618,15 @@ a { color: inherit; text-decoration: none; }
       <h2>The Spanish game,<br>in Bangkok.</h2>
     </div>
     <p class="event-quote">An event designed to <span class="green">celebrate connection, competition and community</span> — while showcasing the energy, creativity and global influence of Spanish football culture, with on-site skill challenges, a fan booth and branded experiences across the day.</p>
-    <div class="event-meta-grid">
+    <div class="event-meta-grid event-meta-grid-4">
       <div class="event-meta-cell"><div class="lbl">Date</div><div class="val">Saturday 27 June 2026</div></div>
       <div class="event-meta-cell"><div class="lbl">Venue</div><div class="val">BALLERS Bangkok — Huai Kwang</div></div>
       <div class="event-meta-cell"><div class="lbl">Hosted with</div><div class="val">SPTCC · Volt</div></div>
+      <div class="event-meta-cell"><div class="lbl">Age</div><div class="val">18+ Adults Only</div></div>
+    </div>
+    <div class="age-banner">
+      <span class="age-pill">18+</span>
+      <span class="age-text">This is an adult tournament. All registered players must be <strong>18 years or over</strong> on event day.</span>
     </div>
   </div>
 </section>
@@ -501,13 +637,13 @@ a { color: inherit; text-decoration: none; }
     <div class="section-header">
       <div class="section-num">02 · BY THE NUMBERS</div>
       <h2>What the day looks like.</h2>
-      <p class="lede">8 teams, 2 pitches in parallel, 16 matches across the day — built for community engagement in the morning and competitive intensity in the afternoon finals.</p>
+      <p class="lede">6 teams in 2 groups, 2 pitches in parallel, 9 matches across the day — round-robin in the morning, positional finals in the afternoon.</p>
     </div>
     <div class="numbers-grid">
-      <div class="numbers-cell"><div class="big"><span class="ic">●</span>8</div><div class="lbl">Teams</div></div>
+      <div class="numbers-cell"><div class="big"><span class="ic">●</span>6</div><div class="lbl">Teams</div></div>
       <div class="numbers-cell"><div class="big">2</div><div class="lbl">Pitches in parallel</div></div>
-      <div class="numbers-cell"><div class="big">~100</div><div class="lbl">Players on the day</div></div>
-      <div class="numbers-cell"><div class="big">10–18<span class="ic">h</span></div><div class="lbl">Full event day</div></div>
+      <div class="numbers-cell"><div class="big">9</div><div class="lbl">Matches on the day</div></div>
+      <div class="numbers-cell"><div class="big">9:30–19:30<span class="ic">h</span></div><div class="lbl">Full event day</div></div>
     </div>
   </div>
 </section>
@@ -527,8 +663,8 @@ a { color: inherit; text-decoration: none; }
         <p>BALLERS Bangkok is built as <strong>the year-round Spanish football home in the city</strong>. The tournament is the natural amplification of that identity — and the venue is purpose-fit for the scale of the event.</p>
       </div>
       <div class="venue-photos">
-        <div class="pic tall" style="background-image:url('assets/venue-training.jpg');"></div>
-        <div class="pic" style="background-image:url('assets/venue-front.jpg');"></div>
+        <div class="pic tall" style="background-image:url('assets/venue-front.jpg');"></div>
+        <div class="pic" style="background-image:url('assets/venue-training.jpg');"></div>
         <div class="pic" style="background-image:url('assets/venue-field.jpg');"></div>
         <div class="pic" style="background-image:url('assets/venue-lounge.jpg');"></div>
         <div class="pic" style="background-image:url('assets/venue-team.jpg');"></div>
@@ -557,14 +693,14 @@ a { color: inherit; text-decoration: none; }
   <div class="container">
     <div class="section-header">
       <div class="section-num">04 · TOURNAMENT FORMAT</div>
-      <h2>16 matches, one day, one champion.</h2>
-      <p class="lede">Two groups of four. Round-robin within each group, then four positional finals. Designed so every team plays competitive football until the final whistle.</p>
+      <h2>9 matches, one day, one champion.</h2>
+      <p class="lede">Two groups of three. Round-robin within each group, then three positional finals. Designed so every team plays competitive football until the final whistle.</p>
     </div>
 
     <!-- Phase 1: Groups -->
     <div class="format-phase-header">
       <div class="tag">PHASE 1</div>
-      <h3>Group stage — 2 groups of 4.</h3>
+      <h3>Group stage — 2 groups of 3.</h3>
     </div>
     <div class="groups-grid">
       <div class="group-card group-a">
@@ -574,7 +710,6 @@ a { color: inherit; text-decoration: none; }
           <div class="team"><span class="badge">A1</span> Team A1</div>
           <div class="team"><span class="badge">A2</span> Team A2</div>
           <div class="team"><span class="badge">A3</span> Team A3</div>
-          <div class="team"><span class="badge">A4</span> Team A4</div>
         </div>
       </div>
       <div class="group-card group-b">
@@ -584,36 +719,46 @@ a { color: inherit; text-decoration: none; }
           <div class="team"><span class="badge">B1</span> Team B1</div>
           <div class="team"><span class="badge">B2</span> Team B2</div>
           <div class="team"><span class="badge">B3</span> Team B3</div>
-          <div class="team"><span class="badge">B4</span> Team B4</div>
         </div>
       </div>
     </div>
 
-    <!-- Group Stage Schedule -->
+    <!-- Group Stage Schedule with times -->
     <div class="schedule-block">
-      <div class="schedule-title">GROUP STAGE SCHEDULE · EVERY TEAM PLAYS 3 MATCHES</div>
+      <div class="schedule-title">GROUP STAGE SCHEDULE · EVERY TEAM PLAYS 2 MATCHES</div>
       <div class="schedule-grid">
         <div class="matchday">
-          <div class="md-label">MATCHDAY 1</div>
+          <div class="md-label">MATCHDAY 1 · 10:00</div>
           <div class="match a"><span class="team-id">A1</span><span class="vs">VS</span><span class="team-id">A2</span></div>
-          <div class="match a"><span class="team-id">A3</span><span class="vs">VS</span><span class="team-id">A4</span></div>
           <div class="match b"><span class="team-id">B1</span><span class="vs">VS</span><span class="team-id">B2</span></div>
-          <div class="match b"><span class="team-id">B3</span><span class="vs">VS</span><span class="team-id">B4</span></div>
         </div>
         <div class="matchday">
-          <div class="md-label">MATCHDAY 2</div>
+          <div class="md-label">MATCHDAY 2 · 10:45</div>
           <div class="match a"><span class="team-id">A1</span><span class="vs">VS</span><span class="team-id">A3</span></div>
-          <div class="match a"><span class="team-id">A2</span><span class="vs">VS</span><span class="team-id">A4</span></div>
           <div class="match b"><span class="team-id">B1</span><span class="vs">VS</span><span class="team-id">B3</span></div>
-          <div class="match b"><span class="team-id">B2</span><span class="vs">VS</span><span class="team-id">B4</span></div>
         </div>
         <div class="matchday">
-          <div class="md-label">MATCHDAY 3</div>
-          <div class="match a"><span class="team-id">A1</span><span class="vs">VS</span><span class="team-id">A4</span></div>
+          <div class="md-label">MATCHDAY 3 · 11:30</div>
           <div class="match a"><span class="team-id">A2</span><span class="vs">VS</span><span class="team-id">A3</span></div>
-          <div class="match b"><span class="team-id">B1</span><span class="vs">VS</span><span class="team-id">B4</span></div>
           <div class="match b"><span class="team-id">B2</span><span class="vs">VS</span><span class="team-id">B3</span></div>
         </div>
+      </div>
+    </div>
+
+    <!-- DAY SCHEDULE — full timeline -->
+    <div class="schedule-block">
+      <div class="schedule-title">FULL DAY TIMELINE · 27 JUNE 2026</div>
+      <div class="day-timeline">
+        <div class="tl-row"><div class="tl-time">09:30 — 10:00</div><div class="tl-event">Arrival · check-in · warm-up</div></div>
+        <div class="tl-row"><div class="tl-time">10:00 — 10:35</div><div class="tl-event"><strong>Matchday 1</strong> · Pitch 1: A1 vs A2 · Pitch 2: B1 vs B2</div></div>
+        <div class="tl-row"><div class="tl-time">10:45 — 11:20</div><div class="tl-event"><strong>Matchday 2</strong> · Pitch 1: A1 vs A3 · Pitch 2: B1 vs B3</div></div>
+        <div class="tl-row"><div class="tl-time">11:30 — 12:05</div><div class="tl-event"><strong>Matchday 3</strong> · Pitch 1: A2 vs A3 · Pitch 2: B2 vs B3</div></div>
+        <div class="tl-row break"><div class="tl-time">12:15 — 15:30</div><div class="tl-event"><strong>Long break</strong> · Lunch + recovery + Crossbar challenge + Free-kick challenge + Sorteos · We wait out the peak heat together.</div></div>
+        <div class="tl-row"><div class="tl-time">15:30 — 16:00</div><div class="tl-event">Standings announced · Sticker drops continue · Warm-ups for the finals</div></div>
+        <div class="tl-row"><div class="tl-time">16:00 — 16:40</div><div class="tl-event"><strong>5<sup>th</sup> place final</strong> · 3<sup>rd</sup> Group A vs 3<sup>rd</sup> Group B · Pitch 1</div></div>
+        <div class="tl-row"><div class="tl-time">16:55 — 17:35</div><div class="tl-event"><strong>3<sup>rd</sup> place final</strong> · 2<sup>nd</sup> Group A vs 2<sup>nd</sup> Group B · Pitch 1</div></div>
+        <div class="tl-row"><div class="tl-time">17:50 — 18:45</div><div class="tl-event final"><strong>GRAND FINAL</strong> · 1<sup>st</sup> Group A vs 1<sup>st</sup> Group B · Pitch 1</div></div>
+        <div class="tl-row"><div class="tl-time">18:45 — 19:30</div><div class="tl-event">Awards ceremony · MVP / Pichichi / Zamora / Limón · Sorteo Volt kit raffle · Closing</div></div>
       </div>
     </div>
 
@@ -641,7 +786,7 @@ a { color: inherit; text-decoration: none; }
     <!-- Phase 2 — Finals -->
     <div class="format-phase-header">
       <div class="tag">PHASE 2</div>
-      <h3>Finals by position — 4 matches.</h3>
+      <h3>Finals by position — 3 matches.</h3>
     </div>
     <div class="finals-block">
       <div class="finals-grid">
@@ -663,20 +808,14 @@ a { color: inherit; text-decoration: none; }
           <div class="arrow">↓</div>
           <div class="prize">5<sup>TH</sup> PLACE</div>
         </div>
-        <div class="final-card">
-          <div class="ord">4<small style="font-size:18px;">TH</small></div>
-          <div class="pair">4<sup>th</sup> Group A<br><span class="vs">VS</span><br>4<sup>th</sup> Group B</div>
-          <div class="arrow">↓</div>
-          <div class="prize">7<sup>TH</sup> PLACE</div>
-        </div>
       </div>
     </div>
 
     <!-- Summary -->
     <div class="format-summary">
-      <div class="cell"><div class="big">12</div><div class="lbl">Group stage matches</div></div>
-      <div class="cell"><div class="big">4</div><div class="lbl">Position finals</div></div>
-      <div class="cell"><div class="big"><span class="ic">●</span>16</div><div class="lbl">Total matches</div></div>
+      <div class="cell"><div class="big">6</div><div class="lbl">Group stage matches</div></div>
+      <div class="cell"><div class="big">3</div><div class="lbl">Position finals</div></div>
+      <div class="cell"><div class="big"><span class="ic">●</span>9</div><div class="lbl">Total matches</div></div>
     </div>
   </div>
 </section>
@@ -684,15 +823,26 @@ a { color: inherit; text-decoration: none; }
 <!-- KITS BY VOLT -->
 <section class="section" id="kits">
   <div class="container">
-    <div class="kit-feature-row">
-      <div class="feature-text">
-        <div class="kit-feature-eyebrow">05 · THE KITS · BY VOLT</div>
-        <h3>Spanish football identity,<br>tournament-wide.</h3>
-        <p>Official tournament jerseys designed by <strong>Volt</strong> for BALLERS Bangkok, drawing on the <strong>visual identities of beloved, historic Spanish clubs</strong> — colourways and silhouettes inspired by decades of Spanish football culture.</p>
-        <p>Each kit combines performance, style and football culture through bold designs adapted to the spirit of the Spanish game — every player on the pitch wearing a piece of Spanish football identity, the BLLRS wordmark across the chest as main sponsor, Volt and BALLERS Bangkok on the flanks.</p>
+    <div class="section-header kits-header">
+      <div class="section-num">05 · THE KITS · BY VOLT</div>
+      <h2>Designed by Volt.<br>Made for the day.</h2>
+      <p class="lede">Every player on the pitch wears the official Volt tournament kit — included in registration. Clean cuts, bold colourways, BLLRS wordmark on the chest, Volt and BALLERS Bangkok on the flanks. The final design will be selected by Volt from the options presented for the tournament.</p>
+    </div>
+
+    <div class="kits-photo-wrap kits-photo-full">
+      <img src="assets/jerseys-volt-range.png" alt="Volt tournament kits for BALLERS Bangkok — orange, pink, white-green and black-yellow designs" class="kits-photo">
+    </div>
+
+    <div class="kits-options-grid">
+      <div class="kits-option-cell">
+        <div class="num">01</div>
+        <div class="title">INCLUDED IN REGISTRATION</div>
+        <div class="body">Every registered player receives the official Volt tournament kit on event day — no surcharge, no upgrades, no opt-out. You take the pitch in tournament colours.</div>
       </div>
-      <div class="kits-photo-wrap">
-        <img src="assets/jerseys.png" alt="BLLRS × Volt tournament kits — designs inspired by Spanish football identities" class="kits-photo">
+      <div class="kits-option-cell">
+        <div class="num">02</div>
+        <div class="title">FINAL DESIGN — BY VOLT</div>
+        <div class="body">Volt selects the final tournament design from the options presented. Announced ahead of the event. Yours to keep after the day.</div>
       </div>
     </div>
   </div>
@@ -710,12 +860,12 @@ a { color: inherit; text-decoration: none; }
       <div class="brings-cell">
         <div class="num">01</div>
         <div class="title">TWO PITCHES, FULL DAY</div>
-        <div class="desc">Both pitches available simultaneously across the entire event day, 10:00 to 18:00, with setup and cleanup included.</div>
+        <div class="desc">Both pitches available simultaneously across the entire event day, 09:30 to 19:30, with setup and cleanup included.</div>
       </div>
-      <div class="brings-cell">
+      <div class="brings-cell brings-cell-highlight">
         <div class="num">02</div>
-        <div class="title">PERFORMANCE CENTER ACCESS</div>
-        <div class="desc">Full access to the BALLERS Performance Center — recovery area, mobility studio and hydration zone for participating players.</div>
+        <div class="title">MATCH RECOVERY ZONE</div>
+        <div class="desc"><strong>Ice bath</strong> and <strong>recovery boots</strong> available between matches — full access to the BALLERS Performance Center recovery area, mobility studio and hydration zone. Players recover. Players come back stronger for the finals.</div>
       </div>
       <div class="brings-cell">
         <div class="num">03</div>
@@ -829,6 +979,59 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
+<!-- REGISTER -->
+<section class="section" id="register">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">09 · REGISTER</div>
+      <h2>Sign up. Play. Belong.</h2>
+    </div>
+
+    <div class="register-intro">
+      <p class="lede">Two ways in. Bring your team of 10 — or come solo and we put you in a team. Either way, you're playing on June 27th.</p>
+    </div>
+
+    <!-- PRICING -->
+    <div class="pricing-block">
+      <div class="pricing-title">REGISTRATION · 18+ ONLY</div>
+      <div class="pricing-grid pricing-grid-single">
+        <div class="pricing-card included">
+          <div class="pc-label">PRICE PER PLAYER · VOLT KIT INCLUDED</div>
+          <div class="pc-price"><span class="currency">฿</span>800</div>
+          <div class="pc-unit">per player</div>
+          <div class="pc-includes">Tournament entry · access to BALLERS Bangkok for the full day · all matches, finals, sorteos and activities included. <strong>Volt tournament kit (jersey)</strong> — yours to keep after the day. <strong>Ice bath and recovery boots</strong> available between matches.</div>
+          <div class="pc-team"><strong>Team of 10 →</strong> ฿8,000</div>
+        </div>
+      </div>
+      <p class="pricing-note">Kit design <strong>to be confirmed by Volt</strong> — selected from the designs presented for the tournament. Tournament restricted to players <strong>18 years and over</strong>.</p>
+    </div>
+
+    <div class="register-grid">
+      <div class="register-card team">
+        <div class="reg-tag">OPTION 01</div>
+        <h3>Register your team.<br>10 players.</h3>
+        <p>You and nine others, ready to play. Submit your roster and we lock you into the bracket. One form, one team, one shot at the trophy.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeN_WYX8W0aubpQwE51mb_Tet6LHXswXQrFoKdpgVMkX0WbLQ/viewform" class="reg-btn" target="_blank" rel="noopener">
+          Register team <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="register-card solo">
+        <div class="reg-tag">OPTION 02</div>
+        <h3>Coming solo?<br>We find your team.</h3>
+        <p>No squad — no problem. Sign up alone and we place you with players we think you'll click with. Show up, meet them, play together.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeqaasGsJg77AYxbKTS8DyyYjV-igTEFYJFUXD9IU5hb18irQ/viewform" class="reg-btn ghost" target="_blank" rel="noopener">
+          Register solo <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <p class="register-tagline">
+      Come play. Make friends. <span class="green">Belong to the BALLERS community.</span>
+    </p>
+  </div>
+</section>
+
 <!-- PARTNERS -->
 <section class="partners" id="partners">
   <div class="container">
@@ -854,15 +1057,82 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
+<!-- SPONSOR PACKAGES -->
+<section class="section" id="sponsor">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">10 · BECOME A SPONSOR</div>
+      <h2>Sponsor the<br>first edition.</h2>
+      <p class="lede">The Spanish-Thai Chamber of Commerce invites member companies to participate as sponsors and partners through the limited opportunities below. Packages linked to team participation are available on a <strong>first-come, first-served basis</strong> — number of competing teams is capped. Early confirmation secures both participation and maximum visibility.</p>
+    </div>
+
+    <div class="sponsor-grid sponsor-grid-3">
+      <div class="sponsor-card">
+        <div class="sp-tier">BRONZE</div>
+        <div class="sp-price"><span class="currency">฿</span>6,000</div>
+        <div class="sp-unit">+ VAT · full tournament</div>
+        <ul class="sp-list">
+          <li>Company logo on official tournament jerseys</li>
+          <li>Recognition as an Official Tournament Sponsor</li>
+          <li>Visibility through event communications and promotional materials</li>
+        </ul>
+        <a href="#sponsor-contact" class="sp-cta">Get in touch <span class="arrow">→</span></a>
+      </div>
+
+      <div class="sponsor-card featured">
+        <div class="sp-tier">SILVER</div>
+        <div class="sp-price"><span class="currency">฿</span>12,000</div>
+        <div class="sp-unit">+ VAT · full tournament</div>
+        <ul class="sp-list">
+          <li>Everything in Bronze</li>
+          <li>One company team registration (up to 10 players)</li>
+          <li>Team competing under your company name</li>
+        </ul>
+        <p class="sp-fine">Participating companies are responsible for providing their own players.</p>
+        <a href="#sponsor-contact" class="sp-cta primary">Get in touch <span class="arrow">→</span></a>
+      </div>
+
+      <div class="sponsor-card">
+        <div class="sp-tier">GOLD</div>
+        <div class="sp-price"><span class="currency">฿</span>20,000</div>
+        <div class="sp-unit">+ VAT · full tournament</div>
+        <ul class="sp-list">
+          <li>Everything in Silver</li>
+          <li>Complimentary booth space at the event venue</li>
+          <li>Company logo on the official tournament backdrop</li>
+          <li>Premium sponsor recognition during the event</li>
+          <li>Enhanced visibility across Chamber communications</li>
+        </ul>
+        <a href="#sponsor-contact" class="sp-cta">Get in touch <span class="arrow">→</span></a>
+      </div>
+    </div>
+
+    <div class="sponsor-contact" id="sponsor-contact">
+      <div class="sc-label">EXPRESS INTEREST · GET DETAILS</div>
+      <p class="sc-text">For sponsorship enquiries, contact the <strong>Spanish-Thai Chamber of Commerce</strong> directly by email. For general tournament questions, you can also reach <strong>BALLERS Bangkok</strong> on LINE.</p>
+      <div class="sc-buttons">
+        <a href="mailto:info@spanishthaicc.com?subject=SPTCC%20Football%20Tournament%202026%20%E2%80%94%20Sponsorship%20Enquiry" class="sc-btn email">
+          <span class="sc-ic">✉</span> Email SPTCC
+        </a>
+        <a href="https://lin.ee/4P287Js" class="sc-btn line" target="_blank" rel="noopener">
+          <span class="sc-ic">●</span> LINE BALLERS
+        </a>
+      </div>
+    </div>
+
+    <p class="sponsor-note">All prices are quoted in Thai Baht and exclude VAT. Custom partnership tiers available on request.</p>
+  </div>
+</section>
+
 <!-- CONTACT / CTA -->
 <section class="section" id="contact">
   <div class="container">
     <div class="cta-block">
-      <div class="section-num" style="text-align:center;">09 · NEXT STEP</div>
+      <div class="section-num" style="text-align:center;">11 · NEXT STEP</div>
       <h2>Let's build this together.</h2>
       <p class="lede">Saturday 27 June 2026 · BALLERS Bangkok. For partnership terms, sponsorship slots and event coordination — get in touch and we lock the path in a single conversation.</p>
       <div class="cta-buttons">
-        <a href="#" class="cta-btn primary">Become a partner</a>
+        <a href="#sponsor" class="cta-btn primary">Become a partner</a>
         <a href="#" class="cta-btn">Download the brief</a>
       </div>
     </div>
