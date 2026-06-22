@@ -171,9 +171,13 @@ a { color: inherit; text-decoration: none; }
 .group-card.group-a .group-name { color: var(--accent); }
 .group-card.group-b .group-name { color: #6694FF; }
 .group-card .teams { display: flex; flex-direction: column; gap: 8px; }
-.group-card .team { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border: 1px solid var(--line); font-size: 14px; letter-spacing: 0.08em; }
+.group-card .team { display: flex; align-items: center; gap: 14px; padding: 10px 14px; border: 1px solid var(--line); font-size: 14px; letter-spacing: 0.08em; background: var(--bg-soft); border-radius: 8px; }
 .group-card .team .badge { font-family: 'Bebas Neue', sans-serif; font-size: 13px; color: var(--accent); width: 28px; }
 .group-card.group-b .team .badge { color: #6694FF; }
+.group-card .team .team-logo { width: 56px; height: 44px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.group-card .team .team-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.group-card .team.melia .team-logo img { filter: brightness(1.4) contrast(1.1); }
+.group-card .team .team-name { font-family: 'Bebas Neue', sans-serif; font-size: 17px; letter-spacing: 0.05em; line-height: 1.1; }
 
 .schedule-block { margin-bottom: 56px; }
 .schedule-title { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 0.20em; color: var(--muted); margin-bottom: 24px; }
@@ -707,18 +711,42 @@ a { color: inherit; text-decoration: none; }
         <div class="group-label">GROUP</div>
         <div class="group-name">A</div>
         <div class="teams">
-          <div class="team"><span class="badge">A1</span> Team A1</div>
-          <div class="team"><span class="badge">A2</span> Team A2</div>
-          <div class="team"><span class="badge">A3</span> Team A3</div>
+          <div class="team">
+            <span class="badge">A1</span>
+            <div class="team-logo"><img src="assets/team-bodegas.png" alt="Bodegas Wine"></div>
+            <span class="team-name">Bodegas Wine</span>
+          </div>
+          <div class="team">
+            <span class="badge">A2</span>
+            <div class="team-logo"><img src="assets/team-fallera-clean.png" alt="La Fallera"></div>
+            <span class="team-name">La Fallera</span>
+          </div>
+          <div class="team">
+            <span class="badge">A3</span>
+            <div class="team-logo"><img src="assets/team-magic.png" alt="The Magic Factory"></div>
+            <span class="team-name">The Magic Factory</span>
+          </div>
         </div>
       </div>
       <div class="group-card group-b">
         <div class="group-label">GROUP</div>
         <div class="group-name">B</div>
         <div class="teams">
-          <div class="team"><span class="badge">B1</span> Team B1</div>
-          <div class="team"><span class="badge">B2</span> Team B2</div>
-          <div class="team"><span class="badge">B3</span> Team B3</div>
+          <div class="team">
+            <span class="badge">B1</span>
+            <div class="team-logo"><img src="assets/team-mod-kaew.png" alt="Mod Kaew Wine Bar"></div>
+            <span class="team-name">Mod Kaew Wine Bar</span>
+          </div>
+          <div class="team">
+            <span class="badge">B2</span>
+            <div class="team-logo"><img src="assets/team-scgp.png" alt="SCGP"></div>
+            <span class="team-name">SCGP</span>
+          </div>
+          <div class="team melia">
+            <span class="badge">B3</span>
+            <div class="team-logo"><img src="assets/team-melia.png" alt="Meliá Hotels"></div>
+            <span class="team-name">Meliá Hotels</span>
+          </div>
         </div>
       </div>
     </div>
@@ -728,17 +756,17 @@ a { color: inherit; text-decoration: none; }
       <div class="schedule-title">GROUP STAGE SCHEDULE · EVERY TEAM PLAYS 2 MATCHES</div>
       <div class="schedule-grid">
         <div class="matchday">
-          <div class="md-label">MATCHDAY 1 · 10:00</div>
+          <div class="md-label">MATCHDAY 1 · 10:15</div>
           <div class="match a"><span class="team-id">A1</span><span class="vs">VS</span><span class="team-id">A2</span></div>
           <div class="match b"><span class="team-id">B1</span><span class="vs">VS</span><span class="team-id">B2</span></div>
         </div>
         <div class="matchday">
-          <div class="md-label">MATCHDAY 2 · 10:45</div>
+          <div class="md-label">MATCHDAY 2 · 10:50</div>
           <div class="match a"><span class="team-id">A1</span><span class="vs">VS</span><span class="team-id">A3</span></div>
           <div class="match b"><span class="team-id">B1</span><span class="vs">VS</span><span class="team-id">B3</span></div>
         </div>
         <div class="matchday">
-          <div class="md-label">MATCHDAY 3 · 11:30</div>
+          <div class="md-label">MATCHDAY 3 · 11:25</div>
           <div class="match a"><span class="team-id">A2</span><span class="vs">VS</span><span class="team-id">A3</span></div>
           <div class="match b"><span class="team-id">B2</span><span class="vs">VS</span><span class="team-id">B3</span></div>
         </div>
@@ -747,18 +775,43 @@ a { color: inherit; text-decoration: none; }
 
     <!-- DAY SCHEDULE — full timeline -->
     <div class="schedule-block">
-      <div class="schedule-title">FULL DAY TIMELINE · 27 JUNE 2026</div>
+      <div class="schedule-title">FULL DAY TIMELINE · 27 JUNE 2026 · 10:00 — 18:00</div>
       <div class="day-timeline">
-        <div class="tl-row"><div class="tl-time">09:30 — 10:00</div><div class="tl-event">Arrival · check-in · warm-up</div></div>
-        <div class="tl-row"><div class="tl-time">10:00 — 10:35</div><div class="tl-event"><strong>Matchday 1</strong> · Pitch 1: A1 vs A2 · Pitch 2: B1 vs B2</div></div>
-        <div class="tl-row"><div class="tl-time">10:45 — 11:20</div><div class="tl-event"><strong>Matchday 2</strong> · Pitch 1: A1 vs A3 · Pitch 2: B1 vs B3</div></div>
-        <div class="tl-row"><div class="tl-time">11:30 — 12:05</div><div class="tl-event"><strong>Matchday 3</strong> · Pitch 1: A2 vs A3 · Pitch 2: B2 vs B3</div></div>
-        <div class="tl-row break"><div class="tl-time">12:15 — 15:30</div><div class="tl-event"><strong>Long break</strong> · Lunch + recovery + Crossbar challenge + Free-kick challenge + Sorteos · We wait out the peak heat together.</div></div>
-        <div class="tl-row"><div class="tl-time">15:30 — 16:00</div><div class="tl-event">Standings announced · Sticker drops continue · Warm-ups for the finals</div></div>
-        <div class="tl-row"><div class="tl-time">16:00 — 16:40</div><div class="tl-event"><strong>5<sup>th</sup> place final</strong> · 3<sup>rd</sup> Group A vs 3<sup>rd</sup> Group B · Pitch 1</div></div>
-        <div class="tl-row"><div class="tl-time">16:55 — 17:35</div><div class="tl-event"><strong>3<sup>rd</sup> place final</strong> · 2<sup>nd</sup> Group A vs 2<sup>nd</sup> Group B · Pitch 1</div></div>
-        <div class="tl-row"><div class="tl-time">17:50 — 18:45</div><div class="tl-event final"><strong>GRAND FINAL</strong> · 1<sup>st</sup> Group A vs 1<sup>st</sup> Group B · Pitch 1</div></div>
-        <div class="tl-row"><div class="tl-time">18:45 — 19:30</div><div class="tl-event">Awards ceremony · MVP / Pichichi / Zamora / Limón · Sorteo Volt kit raffle · Closing</div></div>
+        <div class="tl-row"><div class="tl-time">09:30 — 10:00</div><div class="tl-event">Arrival · check-in · kit collection · locker rooms</div></div>
+        <div class="tl-row"><div class="tl-time">10:00 — 10:15</div><div class="tl-event">Opening · captains briefing · welcome speech</div></div>
+        <div class="tl-row"><div class="tl-time">10:15 — 10:45</div><div class="tl-event"><strong>Matchday 1</strong> · Pitch 1: Bodegas Wine vs La Fallera · Pitch 2: Mod Kaew vs SCGP</div></div>
+        <div class="tl-row"><div class="tl-time">10:50 — 11:20</div><div class="tl-event"><strong>Matchday 2</strong> · Pitch 1: Bodegas Wine vs The Magic Factory · Pitch 2: Mod Kaew vs Meliá Hotels</div></div>
+        <div class="tl-row"><div class="tl-time">11:25 — 11:55</div><div class="tl-event"><strong>Matchday 3</strong> · Pitch 1: La Fallera vs The Magic Factory · Pitch 2: SCGP vs Meliá Hotels</div></div>
+        <div class="tl-row"><div class="tl-time">11:55 — 12:30</div><div class="tl-event">Group stage standings posted · locker break · teams to lunch area</div></div>
+        <div class="tl-row break"><div class="tl-time">12:30 — 14:30</div><div class="tl-event"><strong>Long break</strong> · Paella · Mahou bar · LaLiga Crossbar &amp; Free-Kick Challenge · Rhino booth &amp; giveaway · Sorteos · We wait out the peak heat together.</div></div>
+        <div class="tl-row"><div class="tl-time">14:30 — 15:00</div><div class="tl-event">Bracket finals announced · teams to locker rooms · finals warm-up</div></div>
+        <div class="tl-row"><div class="tl-time">15:00 — 15:30</div><div class="tl-event"><strong>5<sup>th</sup> place final</strong> · 3<sup>rd</sup> Group A vs 3<sup>rd</sup> Group B · Pitch 2</div></div>
+        <div class="tl-row"><div class="tl-time">15:40 — 16:10</div><div class="tl-event"><strong>3<sup>rd</sup> place final</strong> · 2<sup>nd</sup> Group A vs 2<sup>nd</sup> Group B · Pitch 1</div></div>
+        <div class="tl-row"><div class="tl-time">16:20 — 16:55</div><div class="tl-event final"><strong>GRAND FINAL</strong> · 1<sup>st</sup> Group A vs 1<sup>st</sup> Group B · Pitch 1 · halftime entertainment</div></div>
+        <div class="tl-row"><div class="tl-time">17:00 — 17:45</div><div class="tl-event">Awards ceremony · MVP / Pichichi / Zamora / Limón · Position trophies (5<sup>th</sup> / 3<sup>rd</sup> / 2<sup>nd</sup> / Champion) · Sorteo Volt kit raffle</div></div>
+        <div class="tl-row"><div class="tl-time">17:45 — 18:00</div><div class="tl-event">Group photo · closing · venue clear</div></div>
+      </div>
+    </div>
+
+    <!-- MATCH RULES -->
+    <div class="schedule-block">
+      <div class="schedule-title">MATCH RULES · ON THE PITCH</div>
+      <div class="schedule-grid">
+        <div class="matchday">
+          <div class="md-label">FORMAT</div>
+          <div class="match"><span class="team-id">5v5</span><span class="vs">·</span><span class="team-id">+2 BENCH</span></div>
+          <div class="match"><span class="team-id">2×15</span><span class="vs">MIN</span><span class="team-id">HALVES</span></div>
+        </div>
+        <div class="matchday">
+          <div class="md-label">DISCIPLINE</div>
+          <div class="match"><span class="team-id">YELLOW</span><span class="vs">·</span><span class="team-id">WARNING</span></div>
+          <div class="match"><span class="team-id">2YEL</span><span class="vs">·</span><span class="team-id">2 MIN OUT</span></div>
+        </div>
+        <div class="matchday">
+          <div class="md-label">GROUPS</div>
+          <div class="match"><span class="team-id">DRAW</span><span class="vs">=</span><span class="team-id">1 PT EACH</span></div>
+          <div class="match"><span class="team-id">FINALS</span><span class="vs">·</span><span class="team-id">PENALTIES</span></div>
+        </div>
       </div>
     </div>
 
@@ -1052,6 +1105,14 @@ a { color: inherit; text-decoration: none; }
       <div class="partner-logo partner-volt">
         <img src="assets/volt-logo.png" alt="Volt">
         <span class="tag">Official kits</span>
+      </div>
+      <div class="partner-logo">
+        <img src="assets/sponsor-mahou-clean.png" alt="Mahou">
+        <span class="tag">Beverage partner</span>
+      </div>
+      <div class="partner-logo">
+        <img src="assets/sponsor-rhino-clean.png" alt="Rhino">
+        <span class="tag">Tournament partner</span>
       </div>
     </div>
   </div>
